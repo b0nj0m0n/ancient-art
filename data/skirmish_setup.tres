@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="SkirmishSetup" format=3]
+
+[ext_resource type="Script" path="res://scripts/sim/side_setup.gd" id="1_dbpvo"]
+[ext_resource type="Script" path="res://scripts/sim/squad_setup.gd" id="2_p724h"]
+[ext_resource type="Resource" path="res://data/troops/ashigaru.tres" id="3_0o488"]
+[ext_resource type="Resource" path="res://data/troops/samurai.tres" id="4_iaf83"]
+[ext_resource type="Resource" path="res://data/troops/archer.tres" id="5_ocxa8"]
+[ext_resource type="Script" path="res://scripts/sim/skirmish_setup.gd" id="6_tjd3t"]
+[ext_resource type="Resource" path="res://data/hillside.tres" id="7_op0fj"]
+
+[sub_resource type="Resource" id="Resource_cgcqe"]
+script = ExtResource("2_p724h")
+troop = ExtResource("3_0o488")
+size = 10
+start_position = 0.24
+has_commander = true
+
+[sub_resource type="Resource" id="Resource_d6rje"]
+script = ExtResource("1_dbpvo")
+side_name = "Ashigaru band"
+squads = Array[ExtResource("2_p724h")]([SubResource("Resource_cgcqe")])
+
+[sub_resource type="Resource" id="Resource_1diy5"]
+script = ExtResource("2_p724h")
+troop = ExtResource("4_iaf83")
+start_position = 0.7
+has_commander = true
+
+[sub_resource type="Resource" id="Resource_14f40"]
+script = ExtResource("2_p724h")
+troop = ExtResource("5_ocxa8")
+start_position = 0.8
+
+[sub_resource type="Resource" id="Resource_tw4p2"]
+script = ExtResource("1_dbpvo")
+side_name = "Samurai and archers"
+banner_colour = Color(0.6392157, 0.22745098, 0.18431373, 1)
+squads = Array[ExtResource("2_p724h")]([SubResource("Resource_1diy5"), SubResource("Resource_14f40")])
+
+[resource]
+script = ExtResource("6_tjd3t")
+terrain = ExtResource("7_op0fj")
+left = SubResource("Resource_d6rje")
+right = SubResource("Resource_tw4p2")

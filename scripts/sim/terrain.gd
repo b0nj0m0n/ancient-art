@@ -7,9 +7,9 @@ extends Resource
 ## Width of the playable field, left edge to right edge.
 @export var field_width: float = 1280.0
 ## Ground height at the lowest point.
-@export var base_height: float = 150.0
+@export var base_height: float = 100.0
 ## How high the hill rises above the base.
-@export var hill_height: float = 150.0
+@export var hill_height: float = 140.0
 ## Where the hill's top sits, as a fraction of the field width (0 = left, 1 = right).
 @export_range(0.0, 1.0) var hill_peak: float = 0.78
 ## How spread out the hill is, as a fraction of the field width.

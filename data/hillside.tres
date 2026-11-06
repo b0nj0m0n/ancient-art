@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_terrain")
 field_width = 1280.0
-base_height = 150.0
-hill_height = 150.0
+base_height = 100.0
+hill_height = 140.0
 hill_peak = 0.78
 hill_spread = 0.32

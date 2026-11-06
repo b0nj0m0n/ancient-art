@@ -2,6 +2,7 @@ class_name HillsideView
 extends Node2D
 ## Draws the paper hillside: rice-paper background plus stacked cut-paper layers.
 ## Pure drawing. It reads the Terrain resource and never changes it.
+## Lives under FieldView, which centres the field on screen.
 
 @export var terrain: Terrain
 ## Seed for the paper fibres and ragged cut edges, so the look is stable.
@@ -20,18 +21,15 @@ func _ready() -> void:
 
 
 func _on_resized() -> void:
-	# Keep the field centred however wide the phone screen is.
-	var vis := get_viewport().get_visible_rect()
-	position.x = vis.position.x + (vis.size.x - terrain.field_width) * 0.5
 	_build_fibres()
 	queue_redraw()
 
 
 func _draw() -> void:
 	var vis := get_viewport().get_visible_rect()
-	var left := vis.position.x - position.x - EDGE_STEP
+	var left := vis.position.x - global_position.x - EDGE_STEP
 	var right := left + vis.size.x + EDGE_STEP * 2.0
-	draw_rect(Rect2(left, vis.position.y, right - left, vis.size.y), Palette.PAPER)
+	draw_rect(Rect2(left, vis.position.y - global_position.y, right - left, vis.size.y), Palette.PAPER)
 	for fibre in _fibres:
 		draw_polyline(fibre, Palette.PAPER_FIBRE, 1.0)
 	_draw_layer(_far_height, left, right, Palette.FAR_MOUNTAIN, 11)
@@ -57,6 +55,14 @@ func _draw_layer(height_fn: Callable, left: float, right: float, colour: Color, 
 		shadow.append(p + SHADOW_OFFSET)
 	draw_colored_polygon(shadow, Palette.CUT_SHADOW)
 	draw_colored_polygon(shape, colour)
+	# Watercolour wash: pigment pooling just under the cut edge.
+	for band in [[10.0, 18.0, 0.10], [26.0, 22.0, 0.05]]:
+		var wash := PackedVector2Array()
+		for p in edge:
+			wash.append(p + Vector2(0, band[0]))
+		var tint := colour.darkened(0.3)
+		tint.a = band[2]
+		draw_polyline(wash, tint, band[1], true)
 	draw_polyline(edge, colour.darkened(0.25), 2.0, true)
 
 
@@ -71,14 +77,13 @@ func _mid_height(x: float) -> float:
 
 
 func _build_fibres() -> void:
+	# Fibres cover a wide band around the field, so they never depend on screen size.
 	_fibres.clear()
 	var rng := RandomNumberGenerator.new()
 	rng.seed = art_seed
-	var vis := get_viewport().get_visible_rect()
-	for _i in 140:
-		var start := Vector2(
-			rng.randf_range(0.0, vis.size.x) + vis.position.x - position.x,
-			rng.randf_range(0.0, vis.size.y))
+	var w := terrain.field_width if terrain else 1280.0
+	for _i in 220:
+		var start := Vector2(rng.randf_range(-500.0, w + 500.0), rng.randf_range(0.0, FIELD_HEIGHT))
 		var line := PackedVector2Array([start])
 		var dir := Vector2.from_angle(rng.randf_range(0.0, TAU))
 		for _j in 3:
