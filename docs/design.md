@@ -200,3 +200,14 @@ The principles are taught **only implicitly**, through consequences. The game ne
 - **First prototype:** one skirmish with five squads per side, the command bar, morale and routs, on a simple paper-style hillside, to test whether it's fun.
 
 Design the battle interaction in detail, then build a playable prototype to test whether it's fun before adding more systems.
+
+## 15. Skirmish Prototype Decisions
+
+Decisions made by Ben for the first prototype.
+
+- **Squad size:** up to 10 people per squad, up to 5 squads per side.
+- **First test matchup (10 v 10):**
+  - Side A: one samurai squad of 5 and one archer squad of 5.
+  - Side B: one ashigaru squad of 10.
+- **Squad placement is in the prototype.** Before the fight, each side places its squads in its home third.
+- **Terrain features:** trees on the ashigaru side, and a town on the samurai and archer side.
