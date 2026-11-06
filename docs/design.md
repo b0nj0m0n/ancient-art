@@ -200,3 +200,22 @@ The principles are taught **only implicitly**, through consequences. The game ne
 - **First prototype:** one skirmish with five squads per side, the command bar, morale and routs, on a simple paper-style hillside, to test whether it's fun.
 
 Design the battle interaction in detail, then build a playable prototype to test whether it's fun before adding more systems.
+
+## 15. Skirmish Prototype Decisions
+
+Decisions made by Ben for the first prototype.
+
+- **Squad size:** up to 10 people per squad, up to 5 squads per side.
+- **First test matchup (10 v 10):**
+  - Side A: one samurai squad of 5 and one archer squad of 5.
+  - Side B: one ashigaru squad of 10.
+- **Squad placement is in the prototype.** Before the fight, each side places its squads in its home third.
+- **Terrain features:** trees on the ashigaru side, and a town on the samurai and archer side.
+- **Hill:** one hill sloping gently up toward the town, so the ashigaru attack uphill.
+- **Placement phase:** the battle starts paused. The sides take turns placing one squad at a time, with a 5-second timer for each placement. *(Prototype default, to be confirmed: if the timer runs out, the squad goes to its default spot.)*
+- **Retreat:** the squad's members run for their home edge of the screen. Once off screen they are gone from the skirmish.
+- **Winning:** a side wins when every enemy squad has routed or left the field, or when the enemy commander dies.
+- **Commander vs General:** the skirmish commander is not necessarily the General, the main character. The game ends only if the General dies. *(Open question: does losing a non-General commander lose the skirmish? For the prototype, losing your commander loses the skirmish.)*
+- **The battle never pauses** once the fighting starts.
+- **Command bar:** holds 3 orders. An attack or a retreat costs 1. One order's worth refills about every 6 seconds. All of these values can be tuned.
+- **Prototype defaults, to be confirmed by Ben:** the player picks a side on the start screen and the AI plays the other. On the samurai/archer side the commander is with the samurai. The town blocks arrows and gives cover, like the trees.
