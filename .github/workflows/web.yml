@@ -61,6 +61,9 @@ jobs:
           godot --headless --export-release "Web" build/web/index.html
           test -f build/web/index.wasm
 
+      - name: Make phones always load the latest build
+        run: web/post_export.sh build/web
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: build/web
