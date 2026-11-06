@@ -1,30 +1,34 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=9 format=3]
 
-[ext_resource type="Script" path="res://scripts/view/hillside_view.gd" id="1_hill"]
-[ext_resource type="Resource" path="res://data/hillside.tres" id="2_terrain"]
-[ext_resource type="Script" path="res://scripts/view/build_label.gd" id="3_build"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
+[ext_resource type="Resource" path="res://data/skirmish_setup.tres" id="2_setup"]
+[ext_resource type="Script" path="res://scripts/view/field_view.gd" id="3_field"]
+[ext_resource type="Script" path="res://scripts/view/hillside_view.gd" id="4_hill"]
+[ext_resource type="Script" path="res://scripts/view/scenery_view.gd" id="5_scenery"]
+[ext_resource type="Script" path="res://scripts/view/army_view.gd" id="6_army"]
+[ext_resource type="Script" path="res://scripts/view/build_label.gd" id="7_build"]
+[ext_resource type="Script" path="res://scripts/view/foreground_view.gd" id="8_front"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_main")
+setup = ExtResource("2_setup")
 
-[node name="Hillside" type="Node2D" parent="."]
-script = ExtResource("1_hill")
-terrain = ExtResource("2_terrain")
+[node name="Field" type="Node2D" parent="."]
+script = ExtResource("3_field")
+
+[node name="Hillside" type="Node2D" parent="Field"]
+script = ExtResource("4_hill")
+
+[node name="Scenery" type="Node2D" parent="Field"]
+script = ExtResource("5_scenery")
+
+[node name="Army" type="Node2D" parent="Field"]
+script = ExtResource("6_army")
+
+[node name="Foreground" type="Node2D" parent="Field"]
+script = ExtResource("8_front")
 
 [node name="HUD" type="CanvasLayer" parent="."]
-
-[node name="Title" type="Label" parent="HUD"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -300.0
-offset_top = 40.0
-offset_right = 300.0
-offset_bottom = 90.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0.17, 0.15, 0.13, 1)
-theme_override_font_sizes/font_size = 36
-text = "Skirmish on the hillside"
-horizontal_alignment = 1
 
 [node name="BuildLabel" type="Label" parent="HUD"]
 offset_left = 16.0
@@ -34,4 +38,4 @@ offset_bottom = 34.0
 theme_override_colors/font_color = Color(0.17, 0.15, 0.13, 0.6)
 theme_override_font_sizes/font_size = 16
 text = "build"
-script = ExtResource("3_build")
+script = ExtResource("7_build")

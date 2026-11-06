@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TroopType" format=3]
+
+[ext_resource type="Script" path="res://scripts/sim/troop_type.gd" id="1_hqrea"]
+
+[resource]
+script = ExtResource("1_hqrea")
+display_name = "Archers"
+weapon = 2
+headgear = 2
+body_colour = Color(0.43529412, 0.41568628, 0.2901961, 1)
+figure_scale = 0.98
