@@ -66,5 +66,7 @@ says the prototype is fun.
 ## Repo layout (planned)
 
 - `docs/`: design documents
+- `art/reference/`: Japanese battle and landscape prints. Use them as style
+  reference only, never as game assets (see its README)
 - `project.godot`: the Godot project root
 - `scenes/`, `scripts/`, `data/`, `art/`: game content (create these as needed)
