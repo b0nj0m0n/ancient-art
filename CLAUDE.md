@@ -8,6 +8,9 @@ meets Paper Mario.
 the game design. If a request conflicts with it, point that out and ask before
 building.
 
+For anything visual, also read `docs/art.md` (art direction) and check changes
+against the reference images in `art/reference/`.
+
 ## What kind of game this is
 
 - A management game, not an RTS and not a reflex game. The player makes a few
