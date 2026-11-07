@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene load_steps=14 format=3]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
 [ext_resource type="Resource" path="res://data/skirmish_setup.tres" id="2_setup"]
@@ -8,6 +8,15 @@
 [ext_resource type="Script" path="res://scripts/view/army_view.gd" id="6_army"]
 [ext_resource type="Script" path="res://scripts/view/build_label.gd" id="7_build"]
 [ext_resource type="Script" path="res://scripts/view/foreground_view.gd" id="8_front"]
+[ext_resource type="Shader" path="res://shaders/watercolour.gdshader" id="9_wc_shader"]
+[ext_resource type="Texture2D" path="res://art/generated/paper.png" id="10_paper"]
+[ext_resource type="Texture2D" path="res://art/generated/wash_noise.png" id="11_noise"]
+[ext_resource type="Script" path="res://scripts/view/watercolour_pass.gd" id="12_wc_script"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wc"]
+shader = ExtResource("9_wc_shader")
+shader_parameter/paper_tex = ExtResource("10_paper")
+shader_parameter/noise_tex = ExtResource("11_noise")
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_main")
@@ -28,7 +37,20 @@ script = ExtResource("6_army")
 [node name="Foreground" type="Node2D" parent="Field"]
 script = ExtResource("8_front")
 
+[node name="Watercolour" type="CanvasLayer" parent="."]
+
+[node name="Pass" type="ColorRect" parent="Watercolour"]
+material = SubResource("ShaderMaterial_wc")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("12_wc_script")
+
 [node name="HUD" type="CanvasLayer" parent="."]
+layer = 2
 
 [node name="BuildLabel" type="Label" parent="HUD"]
 offset_left = 16.0

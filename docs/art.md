@@ -23,8 +23,8 @@ woodblock-print warriors, then cut out and stood up in layers like a paper diora
 - Every figure, tree and building has a **dark ink outline** (sumi), thin and
   slightly uneven. It is not pure black and not a constant width. Inner lines
   mark folds, hair, lacing and armour plates.
-- Our current pale "cut edge" is the opposite. *(decide: ink outline, pale cut
-  edge, or ink outline plus a faint cut shadow. Recommended: the last.)*
+- Our original pale "cut edge" is the opposite. The style frame tries an ink
+  outline plus a faint cut shadow (see §3).
 
 ### Colour
 - **Flat fills inside the outlines**, then **bokashi**: one colour fading
@@ -87,19 +87,37 @@ woodblock-print warriors, then cut out and stood up in layers like a paper diora
   text) plus **red seals (hanko)**.
 - Natural homes for interface elements: squad names, the command bar, end-of-battle text.
 
-## 3. How we get there (technique)
+## 3. How we get there (agreed process)
 
-In order, cheapest first. Each step is a small change that leaves the game playable.
+Painted pieces, animated like paper cut-outs, under one watercolour shader.
 
-1. **Palette and line pass in code:** ink outlines, new palette, indigo sky band,
-   red cartouche labels. No new art files.
-2. **Shaders:** paper grain over everything, bokashi gradients, slightly
-   uneven ink lines, gold-cloud pattern.
-3. **Patterns per soldier** from their look seed.
-4. **Poses and motion:** stride, lean and flare when units move.
-5. **Painted textures**, if code reaches its limit: brush-stroke and
-   paper textures, or hand-painted sprites. *(decide: who paints, and whether
-   offline image-generation tools are acceptable for assets)*
+| Layer | Source | Motion |
+| --- | --- | --- |
+| Sky, mist, gold clouds | Procedural washes and shaders (Claude) | Slow drift; mist bands slide |
+| Hills, water, ground | Procedural washes with bokashi edges and ink ridge lines (Claude) | Slight parallax between paper layers |
+| Trees, town | Painted sprites with ink outlines | Pine pads sway |
+| Soldiers | **Midjourney** images, cut into parts by Ben (decided) | Cut-out rigs (Skeleton2D), animated at 12 fps |
+| Whole screen | One watercolour shader: paper grain, pigment pooling at edges, slight hand-drawn boil | Subtle shimmer |
+
+- **One rig per troop type.** Individuals differ through shader colour and
+  pattern from their look seed, not separate art.
+- **Budget for phones:** atlas each troop type, use compressed textures, one
+  full-screen shader pass, a total art download of a few MB.
+- **Generated assets are original art.** The reference prints stay reference
+  only (see `art/reference/README.md`).
+
+**Steps**
+1. **Style frame:** sky, hills, mist and gold clouds plus the watercolour
+   shader, judged side by side with the references. *(in progress)*
+2. **Pipeline:** `art/source/` → layered PNGs → Godot import, rigs and shader.
+3. **Vertical slice:** one squad fully animated on the finished hillside.
+4. **Roll out** to all troop types, trees and town.
+
+Soldier and tree art waits until the battle prototype is fun (CLAUDE.md
+milestone). The style frame goes ahead now.
+
+*(decide after seeing the style frame: ink outlines with a faint paper shadow
+(used in the style frame), or the pale paper-cut edge)*
 
 ## 4. Key references
 

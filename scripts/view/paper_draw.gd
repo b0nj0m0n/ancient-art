@@ -1,12 +1,13 @@
 class_name PaperDraw
 ## Helpers for the cut-paper look: each figure is a set of flat paper shapes,
-## drawn with a soft shadow, then a pale cut edge, then the colour fill.
+## drawn with a soft shadow, then an ink outline, then the colour fill
+## (woodblock-print style; see docs/art.md).
 ##
 ## A "shape" is [PackedVector2Array polygon, Color].
 ## A "detail" is [Vector2 from, Vector2 to, Color, float width], an ink line
 ## drawn on top with no border (lacing, bow strings, roof lines).
 
-const EDGE_COLOUR := Color("fbf7ec")
+const EDGE_COLOUR := Palette.INK
 
 
 static func draw_figure(ci: CanvasItem, shapes: Array, details: Array, xf: Transform2D,
@@ -21,7 +22,7 @@ static func draw_figure(ci: CanvasItem, shapes: Array, details: Array, xf: Trans
 		for p in poly:
 			shifted.append(p + shadow)
 		ci.draw_colored_polygon(shifted, Palette.CUT_SHADOW)
-	# 2. Pale cut edge around the whole silhouette.
+	# 2. Ink outline around the whole silhouette.
 	if edge > 0.0:
 		for s in placed:
 			var poly: PackedVector2Array = s[0]
