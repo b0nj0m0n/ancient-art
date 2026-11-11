@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene load_steps=11 format=3]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
 [ext_resource type="Resource" path="res://data/skirmish_setup.tres" id="2_setup"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" path="res://scripts/view/army_view.gd" id="6_army"]
 [ext_resource type="Script" path="res://scripts/view/build_label.gd" id="7_build"]
 [ext_resource type="Script" path="res://scripts/view/foreground_view.gd" id="8_front"]
+[ext_resource type="Script" path="res://scripts/view/pose_sheet.gd" id="9_poses"]
+[ext_resource type="Script" path="res://scripts/view/poses_button.gd" id="10_posebtn"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_main")
@@ -39,3 +41,26 @@ theme_override_colors/font_color = Color(0.17, 0.15, 0.13, 0.6)
 theme_override_font_sizes/font_size = 16
 text = "build"
 script = ExtResource("7_build")
+
+[node name="PoseSheet" type="Control" parent="HUD"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("9_poses")
+
+[node name="PosesButton" type="Button" parent="HUD"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -112.0
+offset_top = 10.0
+offset_right = -16.0
+offset_bottom = 50.0
+grow_horizontal = 0
+text = "Poses"
+script = ExtResource("10_posebtn")

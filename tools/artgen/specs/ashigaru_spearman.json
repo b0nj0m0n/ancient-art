@@ -1,0 +1,30 @@
+{
+  "name": "ashigaru_spearman",
+  "template": "light_infantry",
+  "description": "Ashigaru spearman, side view facing right: black conical jingasa, indigo jacket with a small repeat motif, lacquered body armour with red and ochre lacing, shin and arm guards, straw sandals, long yari, back banner.",
+  "style_target": "late-edo-utagawa (art/reference/analysis/style_bible.json)",
+  "line_width": 6.0,
+  "banner": true,
+  "colours": {
+    "ink": "#2b2c28",
+    "cut_edge": "#fbf7ec",
+    "paper_ground": "#efe6d2",
+    "paper": "#dcd5c6",
+    "skin": "#e3c7a6",
+    "skin_dark": "#c9a985",
+    "hair": "#2b2c28",
+    "cloth": "#2e4e7b",
+    "cloth_dark": "#273f6e",
+    "motif": "#dcd5c6",
+    "guard": "#4e787b",
+    "guard_dark": "#315254",
+    "lacquer": "#3b3a35",
+    "lacing_a": "#ce5956",
+    "lacing_b": "#b38250",
+    "sash": "#ba9d50",
+    "straw": "#ba9d50",
+    "wood": "#815735",
+    "steel": "#b0ad9a",
+    "flag": "#a14f46"
+  }
+}

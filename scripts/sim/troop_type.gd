@@ -15,3 +15,6 @@ enum Headgear { JINGASA, KABUTO, HACHIMAKI }
 @export var body_colour: Color = Color("3b4a6b")
 ## Overall figure size. 1.0 is a normal ashigaru.
 @export_range(0.7, 1.4) var figure_scale: float = 1.0
+## Rigged cut-paper art for this troop (a rig.json made by tools/artgen).
+## Leave empty to draw the simple built-in figure instead.
+@export_file("*.json") var rig_path: String = ""

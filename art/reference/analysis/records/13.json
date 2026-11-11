@@ -1,0 +1,102 @@
+{
+ "index": 13,
+ "master": "figures-core/13_rp-1699563.jpg",
+ "master_px": [
+  1243,
+  1904
+ ],
+ "style_cluster": "late-edo-utagawa",
+ "subject": "swordsman drawing his blade, a second crouching in the distance; poem cartouche above",
+ "themes": [
+  "swordsman",
+  "night",
+  "theatre"
+ ],
+ "style_notes": "large single figure, purple-brown robe, teal ground, clean confident line",
+ "palette": [
+  {
+   "hex": "#baa88d",
+   "share": 0.231
+  },
+  {
+   "hex": "#7a8f84",
+   "share": 0.16
+  },
+  {
+   "hex": "#625754",
+   "share": 0.131
+  },
+  {
+   "hex": "#75645e",
+   "share": 0.122
+  },
+  {
+   "hex": "#dec6a5",
+   "share": 0.105
+  },
+  {
+   "hex": "#a6967f",
+   "share": 0.099
+  },
+  {
+   "hex": "#917b6a",
+   "share": 0.082
+  },
+  {
+   "hex": "#3f3e3a",
+   "share": 0.068
+  }
+ ],
+ "figures": [
+  {
+   "id": "13a",
+   "description": "swordsman drawing sword",
+   "view": "three-quarter",
+   "facing": "L",
+   "kit": "unarmoured",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.2,
+    0.29,
+    0.92,
+    0.97
+   ],
+   "bbox_px": [
+    233,
+    529,
+    1158,
+    1869
+   ],
+   "source_px": [
+    925,
+    1340
+   ],
+   "crop": "crops/13a.jpg"
+  },
+  {
+   "id": "13b",
+   "description": "crouching swordsman in black",
+   "view": "front",
+   "facing": "-",
+   "kit": "unarmoured",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.06,
+    0.29,
+    0.27,
+    0.58
+   ],
+   "bbox_px": [
+    59,
+    529,
+    350,
+    1127
+   ],
+   "source_px": [
+    291,
+    598
+   ],
+   "crop": "crops/13b.jpg"
+  }
+ ]
+}

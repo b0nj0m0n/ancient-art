@@ -1,0 +1,178 @@
+{
+ "index": 2,
+ "master": "figures-core/02_rp-10141552.jpg",
+ "master_px": [
+  1275,
+  1799
+ ],
+ "style_cluster": "early-soft",
+ "subject": "warriors and archers in snow under pines; small melee on the slope above",
+ "themes": [
+  "snow",
+  "archery",
+  "ambush",
+  "pine"
+ ],
+ "style_notes": "faded early palette on tan paper; thin even keyline; flat colour; armour lacing drawn as stripes",
+ "palette": [
+  {
+   "hex": "#b6a785",
+   "share": 0.203
+  },
+  {
+   "hex": "#a79b7b",
+   "share": 0.143
+  },
+  {
+   "hex": "#c3b291",
+   "share": 0.139
+  },
+  {
+   "hex": "#564631",
+   "share": 0.118
+  },
+  {
+   "hex": "#978e71",
+   "share": 0.117
+  },
+  {
+   "hex": "#857b60",
+   "share": 0.1
+  },
+  {
+   "hex": "#6f634b",
+   "share": 0.098
+  },
+  {
+   "hex": "#332a1d",
+   "share": 0.082
+  }
+ ],
+ "figures": [
+  {
+   "id": "02a",
+   "description": "samurai crouching with sword",
+   "view": "three-quarter",
+   "facing": "L",
+   "kit": "armoured",
+   "training_use": "maybe",
+   "bbox_frac": [
+    0.07,
+    0.66,
+    0.26,
+    0.84
+   ],
+   "bbox_px": [
+    73,
+    1165,
+    346,
+    1532
+   ],
+   "source_px": [
+    273,
+    367
+   ],
+   "crop": "crops/02a.jpg"
+  },
+  {
+   "id": "02b",
+   "description": "samurai standing with naginata",
+   "view": "three-quarter",
+   "facing": "R",
+   "kit": "armoured",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.23,
+    0.5,
+    0.5,
+    0.9
+   ],
+   "bbox_px": [
+    277,
+    877,
+    652,
+    1640
+   ],
+   "source_px": [
+    375,
+    763
+   ],
+   "crop": "crops/02b.jpg"
+  },
+  {
+   "id": "02c",
+   "description": "archer kneeling, drawing",
+   "view": "profile",
+   "facing": "R",
+   "kit": "armoured",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.33,
+    0.74,
+    0.67,
+    1.0
+   ],
+   "bbox_px": [
+    405,
+    1309,
+    869,
+    1799
+   ],
+   "source_px": [
+    464,
+    490
+   ],
+   "crop": "crops/02c.jpg"
+  },
+  {
+   "id": "02d",
+   "description": "archer standing, drawing",
+   "view": "three-quarter",
+   "facing": "R",
+   "kit": "armoured",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.62,
+    0.5,
+    0.94,
+    0.88
+   ],
+   "bbox_px": [
+    775,
+    877,
+    1213,
+    1604
+   ],
+   "source_px": [
+    438,
+    727
+   ],
+   "crop": "crops/02d.jpg"
+  },
+  {
+   "id": "02e",
+   "description": "group of small melee figures",
+   "view": "small-scale",
+   "facing": "mixed",
+   "kit": "armoured",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.24,
+    0.02,
+    0.73,
+    0.29
+   ],
+   "bbox_px": [
+    290,
+    14,
+    946,
+    543
+   ],
+   "source_px": [
+    656,
+    529
+   ],
+   "crop": "crops/02e.jpg"
+  }
+ ]
+}

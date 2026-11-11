@@ -1,0 +1,178 @@
+{
+ "index": 3,
+ "master": "figures-core/03_rp-10142529.jpg",
+ "master_px": [
+  1799,
+  1267
+ ],
+ "style_cluster": "late-edo-utagawa",
+ "subject": "street brawl: samurai in hakama against villagers with staffs, framed theatrical scene",
+ "themes": [
+  "brawl",
+  "villagers",
+  "theatre",
+  "autumn"
+ ],
+ "style_notes": "bold black keyline, patterned textiles, decorative border; expressive faces",
+ "palette": [
+  {
+   "hex": "#4c4b3a",
+   "share": 0.184
+  },
+  {
+   "hex": "#63604a",
+   "share": 0.178
+  },
+  {
+   "hex": "#7c6f4d",
+   "share": 0.148
+  },
+  {
+   "hex": "#3b3021",
+   "share": 0.114
+  },
+  {
+   "hex": "#a48354",
+   "share": 0.113
+  },
+  {
+   "hex": "#68442b",
+   "share": 0.111
+  },
+  {
+   "hex": "#717a6e",
+   "share": 0.077
+  },
+  {
+   "hex": "#beaa81",
+   "share": 0.074
+  }
+ ],
+ "figures": [
+  {
+   "id": "03a",
+   "description": "villagers with staffs (group)",
+   "view": "three-quarter",
+   "facing": "R",
+   "kit": "unarmoured",
+   "training_use": "maybe",
+   "bbox_frac": [
+    0.1,
+    0.13,
+    0.34,
+    0.76
+   ],
+   "bbox_px": [
+    158,
+    149,
+    633,
+    978
+   ],
+   "source_px": [
+    475,
+    829
+   ],
+   "crop": "crops/03a.jpg"
+  },
+  {
+   "id": "03b",
+   "description": "samurai in striped hakama",
+   "view": "three-quarter",
+   "facing": "L",
+   "kit": "unarmoured",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.27,
+    0.33,
+    0.57,
+    0.84
+   ],
+   "bbox_px": [
+    464,
+    402,
+    1047,
+    1079
+   ],
+   "source_px": [
+    583,
+    677
+   ],
+   "crop": "crops/03b.jpg"
+  },
+  {
+   "id": "03c",
+   "description": "retainer in blue patterned kimono (part hidden)",
+   "view": "three-quarter",
+   "facing": "R",
+   "kit": "unarmoured",
+   "training_use": "maybe",
+   "bbox_frac": [
+    0.44,
+    0.26,
+    0.64,
+    0.63
+   ],
+   "bbox_px": [
+    769,
+    314,
+    1172,
+    813
+   ],
+   "source_px": [
+    403,
+    499
+   ],
+   "crop": "crops/03c.jpg"
+  },
+  {
+   "id": "03d",
+   "description": "swordsman in black kimono",
+   "view": "three-quarter",
+   "facing": "L",
+   "kit": "unarmoured",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.6,
+    0.31,
+    0.83,
+    0.67
+   ],
+   "bbox_px": [
+    1057,
+    377,
+    1514,
+    864
+   ],
+   "source_px": [
+    457,
+    487
+   ],
+   "crop": "crops/03d.jpg"
+  },
+  {
+   "id": "03e",
+   "description": "fallen men in green",
+   "view": "fallen",
+   "facing": "-",
+   "kit": "unarmoured",
+   "training_use": "maybe",
+   "bbox_frac": [
+    0.47,
+    0.54,
+    0.89,
+    0.91
+   ],
+   "bbox_px": [
+    823,
+    668,
+    1622,
+    1168
+   ],
+   "source_px": [
+    799,
+    500
+   ],
+   "crop": "crops/03e.jpg"
+  }
+ ]
+}

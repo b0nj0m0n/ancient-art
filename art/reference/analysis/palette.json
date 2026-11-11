@@ -1,0 +1,151 @@
+{
+ "method": "pixels pooled from the 17 core prints; one mid, dark and light tone per hue family; orange/yellow need higher saturation so aged paper is not counted as pigment",
+ "pigments": [
+  {
+   "family": "red",
+   "share": 0.0531,
+   "prints": 15,
+   "mid": "#a14f46",
+   "dark": "#642f24",
+   "light": "#ce5956"
+  },
+  {
+   "family": "orange",
+   "share": 0.0627,
+   "prints": 16,
+   "mid": "#815735",
+   "dark": "#523622",
+   "light": "#b38250"
+  },
+  {
+   "family": "yellow",
+   "share": 0.0108,
+   "prints": 13,
+   "mid": "#665a2e",
+   "dark": "#4a4a24",
+   "light": "#ba9d50"
+  },
+  {
+   "family": "green",
+   "share": 0.0052,
+   "prints": 11,
+   "mid": "#4f572e",
+   "dark": "#404928",
+   "light": "#717f56"
+  },
+  {
+   "family": "teal",
+   "share": 0.0214,
+   "prints": 11,
+   "mid": "#4e787b",
+   "dark": "#315254",
+   "light": "#608b8e"
+  },
+  {
+   "family": "blue",
+   "share": 0.006,
+   "prints": 8,
+   "mid": "#273f6e",
+   "dark": "#2c3756",
+   "light": "#2e4e7b"
+  }
+ ],
+ "neutrals": [
+  {
+   "name": "ink black",
+   "hex": "#2b2c28",
+   "share": 0.0215
+  },
+  {
+   "name": "dark grey",
+   "hex": "#4f504a",
+   "share": 0.1423
+  },
+  {
+   "name": "mid grey",
+   "hex": "#7c7f73",
+   "share": 0.1424
+  },
+  {
+   "name": "light grey",
+   "hex": "#b0ad9a",
+   "share": 0.0775
+  },
+  {
+   "name": "paper white",
+   "hex": "#dcd5c6",
+   "share": 0.0644
+  },
+  {
+   "name": "aged paper",
+   "hex": "#bfac8c",
+   "share": 0.2281
+  }
+ ],
+ "plain_kmeans_reference": [
+  {
+   "hex": "#baa98b",
+   "share": 0.115
+  },
+  {
+   "hex": "#817665",
+   "share": 0.109
+  },
+  {
+   "hex": "#68645b",
+   "share": 0.101
+  },
+  {
+   "hex": "#9b937e",
+   "share": 0.099
+  },
+  {
+   "hex": "#5c5442",
+   "share": 0.087
+  },
+  {
+   "hex": "#453d33",
+   "share": 0.084
+  },
+  {
+   "hex": "#d8c4a8",
+   "share": 0.065
+  },
+  {
+   "hex": "#2b2822",
+   "share": 0.048
+  },
+  {
+   "hex": "#708981",
+   "share": 0.048
+  },
+  {
+   "hex": "#805640",
+   "share": 0.046
+  },
+  {
+   "hex": "#a37e54",
+   "share": 0.045
+  },
+  {
+   "hex": "#474946",
+   "share": 0.043
+  },
+  {
+   "hex": "#e1d9ca",
+   "share": 0.038
+  },
+  {
+   "hex": "#b38a67",
+   "share": 0.029
+  },
+  {
+   "hex": "#bbb8a6",
+   "share": 0.026
+  },
+  {
+   "hex": "#bb4e4d",
+   "share": 0.018
+  }
+ ]
+}

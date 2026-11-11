@@ -1,0 +1,403 @@
+{
+ "index": 12,
+ "master": "figures-core/12_rp-1685981.jpg",
+ "master_px": [
+  3841,
+  2566
+ ],
+ "style_cluster": "landscape-figures",
+ "subject": "festival runners hauling horses past a shrine gate at night",
+ "themes": [
+  "procession",
+  "running",
+  "commoners",
+  "festival"
+ ],
+ "style_notes": "small simplified figures in clean profile; thin line; flat red-and-white and blue-and-white coats; graded dark ground",
+ "palette": [
+  {
+   "hex": "#e9c9a4",
+   "share": 0.266
+  },
+  {
+   "hex": "#ceac8c",
+   "share": 0.169
+  },
+  {
+   "hex": "#4b4743",
+   "share": 0.16
+  },
+  {
+   "hex": "#ac937d",
+   "share": 0.139
+  },
+  {
+   "hex": "#6b605c",
+   "share": 0.089
+  },
+  {
+   "hex": "#8a7c71",
+   "share": 0.086
+  },
+  {
+   "hex": "#a86e5c",
+   "share": 0.048
+  },
+  {
+   "hex": "#cf7d66",
+   "share": 0.042
+  }
+ ],
+ "figures": [
+  {
+   "id": "12a",
+   "description": "runner",
+   "view": "profile",
+   "facing": "L",
+   "kit": "commoner",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.09,
+    0.46,
+    0.23,
+    0.7
+   ],
+   "bbox_px": [
+    299,
+    1149,
+    929,
+    1826
+   ],
+   "source_px": [
+    630,
+    677
+   ],
+   "crop": "crops/12a.jpg"
+  },
+  {
+   "id": "12b",
+   "description": "runner",
+   "view": "profile",
+   "facing": "L",
+   "kit": "commoner",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.2,
+    0.49,
+    0.32,
+    0.74
+   ],
+   "bbox_px": [
+    722,
+    1226,
+    1275,
+    1929
+   ],
+   "source_px": [
+    553,
+    703
+   ],
+   "crop": "crops/12b.jpg"
+  },
+  {
+   "id": "12c",
+   "description": "child runner",
+   "view": "profile",
+   "facing": "L",
+   "kit": "commoner",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.29,
+    0.61,
+    0.41,
+    0.8
+   ],
+   "bbox_px": [
+    1067,
+    1534,
+    1620,
+    2083
+   ],
+   "source_px": [
+    553,
+    549
+   ],
+   "crop": "crops/12c.jpg"
+  },
+  {
+   "id": "12d",
+   "description": "runner",
+   "view": "profile",
+   "facing": "L",
+   "kit": "commoner",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.36,
+    0.59,
+    0.5,
+    0.83
+   ],
+   "bbox_px": [
+    1336,
+    1483,
+    1966,
+    2160
+   ],
+   "source_px": [
+    630,
+    677
+   ],
+   "crop": "crops/12d.jpg"
+  },
+  {
+   "id": "12e",
+   "description": "runner hauling rope",
+   "view": "profile",
+   "facing": "L",
+   "kit": "commoner",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.45,
+    0.59,
+    0.62,
+    0.84
+   ],
+   "bbox_px": [
+    1682,
+    1483,
+    2427,
+    2186
+   ],
+   "source_px": [
+    745,
+    703
+   ],
+   "crop": "crops/12e.jpg"
+  },
+  {
+   "id": "12f",
+   "description": "runner with stick",
+   "view": "profile",
+   "facing": "L",
+   "kit": "commoner",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.47,
+    0.46,
+    0.61,
+    0.63
+   ],
+   "bbox_px": [
+    1759,
+    1149,
+    2389,
+    1647
+   ],
+   "source_px": [
+    630,
+    498
+   ],
+   "crop": "crops/12f.jpg"
+  },
+  {
+   "id": "12g",
+   "description": "runner",
+   "view": "profile",
+   "facing": "L",
+   "kit": "commoner",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.54,
+    0.52,
+    0.69,
+    0.68
+   ],
+   "bbox_px": [
+    2028,
+    1303,
+    2696,
+    1775
+   ],
+   "source_px": [
+    668,
+    472
+   ],
+   "crop": "crops/12g.jpg"
+  },
+  {
+   "id": "12h",
+   "description": "runner hauling rope",
+   "view": "profile",
+   "facing": "L",
+   "kit": "commoner",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.56,
+    0.63,
+    0.71,
+    0.87
+   ],
+   "bbox_px": [
+    2104,
+    1585,
+    2773,
+    2263
+   ],
+   "source_px": [
+    669,
+    678
+   ],
+   "crop": "crops/12h.jpg"
+  },
+  {
+   "id": "12i",
+   "description": "runner",
+   "view": "profile",
+   "facing": "L",
+   "kit": "commoner",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.65,
+    0.51,
+    0.81,
+    0.7
+   ],
+   "bbox_px": [
+    2450,
+    1277,
+    3157,
+    1826
+   ],
+   "source_px": [
+    707,
+    549
+   ],
+   "crop": "crops/12i.jpg"
+  },
+  {
+   "id": "12j",
+   "description": "runner hauling rope",
+   "view": "profile",
+   "facing": "L",
+   "kit": "commoner",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.67,
+    0.63,
+    0.83,
+    0.88
+   ],
+   "bbox_px": [
+    2527,
+    1585,
+    3234,
+    2288
+   ],
+   "source_px": [
+    707,
+    703
+   ],
+   "crop": "crops/12j.jpg"
+  },
+  {
+   "id": "12k",
+   "description": "runner",
+   "view": "profile",
+   "facing": "L",
+   "kit": "commoner",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.76,
+    0.53,
+    0.88,
+    0.71
+   ],
+   "bbox_px": [
+    2873,
+    1329,
+    3426,
+    1852
+   ],
+   "source_px": [
+    553,
+    523
+   ],
+   "crop": "crops/12k.jpg"
+  },
+  {
+   "id": "12l",
+   "description": "distant group of blue-coat runners",
+   "view": "small-scale",
+   "facing": "L",
+   "kit": "commoner",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.34,
+    0.26,
+    0.99,
+    0.48
+   ],
+   "bbox_px": [
+    1259,
+    636,
+    3841,
+    1262
+   ],
+   "source_px": [
+    2582,
+    626
+   ],
+   "crop": "crops/12l.jpg"
+  },
+  {
+   "id": "12m",
+   "description": "travellers watching",
+   "view": "small-scale",
+   "facing": "-",
+   "kit": "commoner",
+   "training_use": "maybe",
+   "bbox_frac": [
+    0.27,
+    0.16,
+    0.37,
+    0.31
+   ],
+   "bbox_px": [
+    990,
+    379,
+    1467,
+    826
+   ],
+   "source_px": [
+    477,
+    447
+   ],
+   "crop": "crops/12m.jpg"
+  },
+  {
+   "id": "12n",
+   "description": "whole lower group of runners (individual crops a-k overlap their neighbours)",
+   "view": "profile",
+   "facing": "L",
+   "kit": "commoner",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.08,
+    0.45,
+    0.93,
+    0.89
+   ],
+   "bbox_px": [
+    261,
+    1123,
+    3618,
+    2314
+   ],
+   "source_px": [
+    3357,
+    1191
+   ],
+   "crop": "crops/12n.jpg"
+  }
+ ]
+}

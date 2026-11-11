@@ -1,0 +1,102 @@
+{
+ "index": 11,
+ "master": "figures-core/11_rp-1613510.jpg",
+ "master_px": [
+  1347,
+  1928
+ ],
+ "style_cluster": "late-edo-utagawa",
+ "subject": "two swordsmen in patterned kimono and capes on a night hillside",
+ "themes": [
+  "duel",
+  "night",
+  "travel"
+ ],
+ "style_notes": "bold outline, muscular limbs with white highlights, red patterned cloth, mint-green ground",
+ "palette": [
+  {
+   "hex": "#756e66",
+   "share": 0.267
+  },
+  {
+   "hex": "#3f403c",
+   "share": 0.193
+  },
+  {
+   "hex": "#555653",
+   "share": 0.151
+  },
+  {
+   "hex": "#949d83",
+   "share": 0.134
+  },
+  {
+   "hex": "#516469",
+   "share": 0.11
+  },
+  {
+   "hex": "#b8a285",
+   "share": 0.06
+  },
+  {
+   "hex": "#ae5e54",
+   "share": 0.045
+  },
+  {
+   "hex": "#d3bc9a",
+   "share": 0.039
+  }
+ ],
+ "figures": [
+  {
+   "id": "11a",
+   "description": "warrior with quiver and cape",
+   "view": "three-quarter",
+   "facing": "R",
+   "kit": "unarmoured",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.02,
+    0.59,
+    0.57,
+    0.99
+   ],
+   "bbox_px": [
+    10,
+    1114,
+    783,
+    1928
+   ],
+   "source_px": [
+    773,
+    814
+   ],
+   "crop": "crops/11a.jpg"
+  },
+  {
+   "id": "11b",
+   "description": "warrior with hand on sword",
+   "view": "three-quarter",
+   "facing": "L",
+   "kit": "unarmoured",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.49,
+    0.52,
+    0.98,
+    0.93
+   ],
+   "bbox_px": [
+    643,
+    979,
+    1336,
+    1816
+   ],
+   "source_px": [
+    693,
+    837
+   ],
+   "crop": "crops/11b.jpg"
+  }
+ ]
+}

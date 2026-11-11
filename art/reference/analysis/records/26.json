@@ -1,0 +1,253 @@
+{
+ "index": 26,
+ "master": "figures-core/26_rp-7639167.jpg",
+ "master_px": [
+  4910,
+  2517
+ ],
+ "style_cluster": "meiji-vivid",
+ "subject": "procession: foot soldiers with conch horns and drum ahead of mounted samurai under a pine",
+ "themes": [
+  "procession",
+  "foot soldiers",
+  "signals",
+  "cavalry"
+ ],
+ "style_notes": "clean figures on near-white ground, fine line, bright flat colour, little background",
+ "palette": [
+  {
+   "hex": "#d9d5ce",
+   "share": 0.284
+  },
+  {
+   "hex": "#c9c1b7",
+   "share": 0.16
+  },
+  {
+   "hex": "#b4a99b",
+   "share": 0.13
+  },
+  {
+   "hex": "#9a8f84",
+   "share": 0.118
+  },
+  {
+   "hex": "#80766d",
+   "share": 0.112
+  },
+  {
+   "hex": "#6d574f",
+   "share": 0.094
+  },
+  {
+   "hex": "#434344",
+   "share": 0.058
+  },
+  {
+   "hex": "#ca593f",
+   "share": 0.044
+  }
+ ],
+ "figures": [
+  {
+   "id": "26a",
+   "description": "foot soldier blowing conch, orange surcoat",
+   "view": "three-quarter",
+   "facing": "R",
+   "kit": "light",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.03,
+    0.46,
+    0.14,
+    0.93
+   ],
+   "bbox_px": [
+    88,
+    1127,
+    746,
+    2371
+   ],
+   "source_px": [
+    658,
+    1244
+   ],
+   "crop": "crops/26a.jpg"
+  },
+  {
+   "id": "26b",
+   "description": "foot soldier blowing conch, red surcoat",
+   "view": "three-quarter",
+   "facing": "L",
+   "kit": "light",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.1,
+    0.49,
+    0.21,
+    0.98
+   ],
+   "bbox_px": [
+    432,
+    1203,
+    1090,
+    2496
+   ],
+   "source_px": [
+    658,
+    1293
+   ],
+   "crop": "crops/26b.jpg"
+  },
+  {
+   "id": "26c",
+   "description": "foot soldier in black conical hat with drum",
+   "view": "three-quarter",
+   "facing": "L",
+   "kit": "light",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.16,
+    0.49,
+    0.28,
+    0.94
+   ],
+   "bbox_px": [
+    726,
+    1203,
+    1433,
+    2396
+   ],
+   "source_px": [
+    707,
+    1193
+   ],
+   "crop": "crops/26c.jpg"
+  },
+  {
+   "id": "26d",
+   "description": "drummer in blue coat",
+   "view": "three-quarter",
+   "facing": "L",
+   "kit": "light",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.22,
+    0.46,
+    0.33,
+    0.93
+   ],
+   "bbox_px": [
+    1021,
+    1127,
+    1679,
+    2371
+   ],
+   "source_px": [
+    658,
+    1244
+   ],
+   "crop": "crops/26d.jpg"
+  },
+  {
+   "id": "26e",
+   "description": "foot-soldier group (whole)",
+   "view": "mixed",
+   "facing": "-",
+   "kit": "light",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.03,
+    0.45,
+    0.33,
+    0.98
+   ],
+   "bbox_px": [
+    88,
+    1102,
+    1679,
+    2496
+   ],
+   "source_px": [
+    1591,
+    1394
+   ],
+   "crop": "crops/26e.jpg"
+  },
+  {
+   "id": "26f",
+   "description": "mounted samurai in full armour",
+   "view": "mounted",
+   "facing": "L",
+   "kit": "armoured",
+   "training_use": "reference-only",
+   "bbox_frac": [
+    0.26,
+    0.23,
+    0.51,
+    0.91
+   ],
+   "bbox_px": [
+    1217,
+    548,
+    2563,
+    2320
+   ],
+   "source_px": [
+    1346,
+    1772
+   ],
+   "crop": "crops/26f.jpg"
+  },
+  {
+   "id": "26g",
+   "description": "mounted samurai on white horse",
+   "view": "mounted",
+   "facing": "L",
+   "kit": "armoured",
+   "training_use": "reference-only",
+   "bbox_frac": [
+    0.45,
+    0.32,
+    0.63,
+    0.95
+   ],
+   "bbox_px": [
+    2150,
+    775,
+    3152,
+    2421
+   ],
+   "source_px": [
+    1002,
+    1646
+   ],
+   "crop": "crops/26g.jpg"
+  },
+  {
+   "id": "26h",
+   "description": "mounted samurai seen from behind, red surcoat",
+   "view": "mounted",
+   "facing": "-",
+   "kit": "armoured",
+   "training_use": "reference-only",
+   "bbox_frac": [
+    0.83,
+    0.34,
+    1.0,
+    0.89
+   ],
+   "bbox_px": [
+    4016,
+    825,
+    4910,
+    2270
+   ],
+   "source_px": [
+    894,
+    1445
+   ],
+   "crop": "crops/26h.jpg"
+  }
+ ]
+}

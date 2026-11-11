@@ -1,0 +1,127 @@
+{
+ "index": 7,
+ "master": "figures-core/07_rp-11931299.jpg",
+ "master_px": [
+  3014,
+  1509
+ ],
+ "style_cluster": "meiji-vivid",
+ "subject": "sea battle with boats, arrows and a giant bird-headed prow",
+ "themes": [
+  "sea battle",
+  "boats",
+  "arrows"
+ ],
+ "style_notes": "very dense; vermilion, green and navy; figures tangled together",
+ "palette": [
+  {
+   "hex": "#807d6e",
+   "share": 0.206
+  },
+  {
+   "hex": "#645954",
+   "share": 0.147
+  },
+  {
+   "hex": "#a19888",
+   "share": 0.139
+  },
+  {
+   "hex": "#964e42",
+   "share": 0.124
+  },
+  {
+   "hex": "#c2b7a4",
+   "share": 0.112
+  },
+  {
+   "hex": "#3c3234",
+   "share": 0.109
+  },
+  {
+   "hex": "#bc6759",
+   "share": 0.104
+  },
+  {
+   "hex": "#ded7ca",
+   "share": 0.06
+  }
+ ],
+ "figures": [
+  {
+   "id": "07a",
+   "description": "warrior in green armour with polearm",
+   "view": "three-quarter",
+   "facing": "L",
+   "kit": "armoured",
+   "training_use": "maybe",
+   "bbox_frac": [
+    0.71,
+    0.26,
+    0.88,
+    0.57
+   ],
+   "bbox_px": [
+    2103,
+    374,
+    2688,
+    878
+   ],
+   "source_px": [
+    585,
+    504
+   ],
+   "crop": "crops/07a.jpg"
+  },
+  {
+   "id": "07b",
+   "description": "warriors in a boat (group)",
+   "view": "mixed",
+   "facing": "R",
+   "kit": "armoured",
+   "training_use": "maybe",
+   "bbox_frac": [
+    0.0,
+    0.6,
+    0.34,
+    0.96
+   ],
+   "bbox_px": [
+    0,
+    887,
+    1060,
+    1466
+   ],
+   "source_px": [
+    1060,
+    579
+   ],
+   "crop": "crops/07b.jpg"
+  },
+  {
+   "id": "07c",
+   "description": "warriors lower right (group)",
+   "view": "mixed",
+   "facing": "L",
+   "kit": "armoured",
+   "training_use": "maybe",
+   "bbox_frac": [
+    0.77,
+    0.67,
+    1.0,
+    0.99
+   ],
+   "bbox_px": [
+    2284,
+    992,
+    3014,
+    1509
+   ],
+   "source_px": [
+    730,
+    517
+   ],
+   "crop": "crops/07c.jpg"
+  }
+ ]
+}
