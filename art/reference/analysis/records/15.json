@@ -1,0 +1,102 @@
+{
+ "index": 15,
+ "master": "figures-core/15_rp-3229092.jpg",
+ "master_px": [
+  4344,
+  6320
+ ],
+ "style_cluster": "meiji-vivid",
+ "subject": "armoured archer kneeling at full draw beside a kneeling retainer, fire behind",
+ "themes": [
+  "archery",
+  "commander",
+  "fire"
+ ],
+ "style_notes": "strong vermilion and cobalt, black smoke shapes, crisp fine line, modelled faces",
+ "palette": [
+  {
+   "hex": "#bfae8a",
+   "share": 0.301
+  },
+  {
+   "hex": "#8a785e",
+   "share": 0.207
+  },
+  {
+   "hex": "#463f3a",
+   "share": 0.145
+  },
+  {
+   "hex": "#ba3145",
+   "share": 0.123
+  },
+  {
+   "hex": "#734c45",
+   "share": 0.105
+  },
+  {
+   "hex": "#426972",
+   "share": 0.055
+  },
+  {
+   "hex": "#213a6c",
+   "share": 0.045
+  },
+  {
+   "hex": "#56787c",
+   "share": 0.02
+  }
+ ],
+ "figures": [
+  {
+   "id": "15a",
+   "description": "archer in red armour kneeling, drawing bow",
+   "view": "three-quarter",
+   "facing": "R",
+   "kit": "armoured",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.12,
+    0.04,
+    0.67,
+    0.91
+   ],
+   "bbox_px": [
+    469,
+    176,
+    2962,
+    5827
+   ],
+   "source_px": [
+    2493,
+    5651
+   ],
+   "crop": "crops/15a.jpg"
+  },
+  {
+   "id": "15b",
+   "description": "retainer kneeling in blue",
+   "view": "three-quarter",
+   "facing": "L",
+   "kit": "light",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.51,
+    0.54,
+    0.93,
+    0.91
+   ],
+   "bbox_px": [
+    2163,
+    3336,
+    4092,
+    5827
+   ],
+   "source_px": [
+    1929,
+    2491
+   ],
+   "crop": "crops/15b.jpg"
+  }
+ ]
+}

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3]
+[gd_scene load_steps=16 format=3]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
 [ext_resource type="Resource" path="res://data/skirmish_setup.tres" id="2_setup"]
@@ -12,11 +12,14 @@
 [ext_resource type="Texture2D" path="res://art/generated/paper.png" id="10_paper"]
 [ext_resource type="Texture2D" path="res://art/generated/wash_noise.png" id="11_noise"]
 [ext_resource type="Script" path="res://scripts/view/watercolour_pass.gd" id="12_wc_script"]
+[ext_resource type="Script" path="res://scripts/view/pose_sheet.gd" id="13_poses"]
+[ext_resource type="Script" path="res://scripts/view/poses_button.gd" id="14_posebtn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wc"]
 shader = ExtResource("9_wc_shader")
 shader_parameter/paper_tex = ExtResource("10_paper")
 shader_parameter/noise_tex = ExtResource("11_noise")
+
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_main")
@@ -62,6 +65,17 @@ theme_override_font_sizes/font_size = 16
 text = "build"
 script = ExtResource("7_build")
 
+[node name="PoseSheet" type="Control" parent="HUD"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("13_poses")
+
 [node name="Restart" type="Button" parent="HUD"]
 anchors_preset = 1
 anchor_left = 1.0
@@ -74,3 +88,17 @@ grow_horizontal = 0
 focus_mode = 0
 theme_override_font_sizes/font_size = 24
 text = "Restart"
+
+[node name="PosesButton" type="Button" parent="HUD"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -286.0
+offset_top = 12.0
+offset_right = -162.0
+offset_bottom = 66.0
+grow_horizontal = 0
+focus_mode = 0
+theme_override_font_sizes/font_size = 24
+text = "Poses"
+script = ExtResource("14_posebtn")

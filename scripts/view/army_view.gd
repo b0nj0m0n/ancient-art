@@ -10,6 +10,9 @@ const SWAY_ANGLE := 0.025
 
 ## Size of every figure on screen. Bigger reads better on a phone.
 @export var figure_size: float = 1.45
+## Animations rigged figures play (names from their rig.json).
+@export var rigged_walk_animation: String = "walk"
+@export var rigged_rest_animation: String = "idle"
 
 @export_group("Walking")
 ## Distance covered by one step, in field units. Steps follow distance walked,
@@ -24,20 +27,35 @@ const SWAY_ANGLE := 0.025
 var alpha: float = 1.0
 
 var battle: Battle
-var _figures: Dictionary = {}  # Soldier -> SoldierFigure
+var _figures: Dictionary = {}  # Soldier -> SoldierFigure or RiggedFigure
 var _draw_order: Array[Soldier] = []
 var _time: float = 0.0
+
+
+func _ready() -> void:
+	# Rigged parts are drawn much smaller than their textures; mipmaps keep them clean.
+	texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
 
 
 func show_battle(b: Battle) -> void:
 	battle = b
 	_figures.clear()
 	for s in battle.soldiers:
-		_figures[s] = SoldierFigure.new(s, battle.side_setup(s.side))
+		_figures[s] = _make_figure(s)
 	_draw_order = battle.soldiers.duplicate()
 	_draw_order.sort_custom(func(a: Soldier, c: Soldier) -> bool:
 		return a.row > c.row if a.row != c.row else a.x < c.x)
 	queue_redraw()
+
+
+func _make_figure(s: Soldier) -> RefCounted:
+	var side_def := battle.side_setup(s.side)
+	var rig_path := s.squad.troop.rig_path
+	if rig_path != "":
+		var rigged := RiggedFigure.new(rig_path, s, side_def)
+		if rigged.has_parts():
+			return rigged
+	return SoldierFigure.new(s, side_def)
 
 
 func _process(delta: float) -> void:
@@ -59,15 +77,28 @@ func ground_y(x: float) -> float:
 
 
 func _draw_soldier(s: Soldier) -> void:
-	var fig: SoldierFigure = _figures[s]
 	var depth := BACK_ROW_SCALE if s.row == 1 else 1.0
-	var size := fig.scale * depth * figure_size
 	var facing := Battle.facing(s.side)
 	var lift := BACK_ROW_LIFT if s.row == 1 else 0.0
 	var x := lerpf(s.prev_x, s.x, alpha)
+	var marching := s.squad.moving
+	var rigged := _figures[s] as RiggedFigure
+	if rigged != null:
+		# Rigged art animates its own legs and arms; add only the lean and sway.
+		var rig_size := rigged.scale * depth * figure_size
+		var rig_angle := sin(_time * rigged.sway_speed + rigged.sway_phase) * SWAY_ANGLE
+		if marching:
+			rig_angle += facing * march_lean * 0.5
+		var rig_xf := Transform2D(rig_angle, Vector2(rig_size * facing, rig_size), 0.0,
+			Vector2(x, ground_y(x) - lift + 1.0))
+		var anim := rigged_walk_animation if marching else rigged_rest_animation
+		rigged.draw(self, rig_xf, rigged.pose_at(anim, _time))
+		return
+	var fig: SoldierFigure = _figures[s]
+	var size := fig.scale * depth * figure_size
 	var angle := sin(_time * fig.sway_speed + fig.sway_phase) * SWAY_ANGLE
 	var bob := 0.0
-	if s.squad.moving:
+	if marching:
 		# Each step lifts the body; steps are tied to distance walked.
 		var phase := (x * facing + fig.sway_phase * stride_length) / stride_length * PI
 		bob = absf(sin(phase)) * stride_bob * size

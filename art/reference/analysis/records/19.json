@@ -1,0 +1,202 @@
+{
+ "index": 19,
+ "master": "figures-core/19_rp-7132442.jpg",
+ "master_px": [
+  7000,
+  5255
+ ],
+ "style_cluster": "early-soft",
+ "subject": "bare-chested hero hurling attackers off a veranda into water",
+ "themes": [
+  "brawl",
+  "hero",
+  "water"
+ ],
+ "style_notes": "soft red, green and tan; open paper areas; rounded figures; patterned cloth",
+ "palette": [
+  {
+   "hex": "#b1966a",
+   "share": 0.189
+  },
+  {
+   "hex": "#94907d",
+   "share": 0.149
+  },
+  {
+   "hex": "#bca98c",
+   "share": 0.129
+  },
+  {
+   "hex": "#9d7959",
+   "share": 0.12
+  },
+  {
+   "hex": "#595c4d",
+   "share": 0.118
+  },
+  {
+   "hex": "#7c7765",
+   "share": 0.115
+  },
+  {
+   "hex": "#3b4339",
+   "share": 0.09
+  },
+  {
+   "hex": "#825b47",
+   "share": 0.09
+  }
+ ],
+ "figures": [
+  {
+   "id": "19a",
+   "description": "armoured samurai with attendants",
+   "view": "three-quarter",
+   "facing": "R",
+   "kit": "armoured",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.15,
+    0.04,
+    0.45,
+    0.45
+   ],
+   "bbox_px": [
+    965,
+    147,
+    3234,
+    2427
+   ],
+   "source_px": [
+    2269,
+    2280
+   ],
+   "crop": "crops/19a.jpg"
+  },
+  {
+   "id": "19b",
+   "description": "tumbling warrior",
+   "view": "falling",
+   "facing": "-",
+   "kit": "light",
+   "training_use": "maybe",
+   "bbox_frac": [
+    0.27,
+    0.29,
+    0.51,
+    0.67
+   ],
+   "bbox_px": [
+    1806,
+    1460,
+    3654,
+    3583
+   ],
+   "source_px": [
+    1848,
+    2123
+   ],
+   "crop": "crops/19b.jpg"
+  },
+  {
+   "id": "19c",
+   "description": "bare-chested hero",
+   "view": "front",
+   "facing": "-",
+   "kit": "unarmoured",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.53,
+    0.21,
+    0.93,
+    0.81
+   ],
+   "bbox_px": [
+    3626,
+    1040,
+    6594,
+    4319
+   ],
+   "source_px": [
+    2968,
+    3279
+   ],
+   "crop": "crops/19c.jpg"
+  },
+  {
+   "id": "19d",
+   "description": "fallen pair in water",
+   "view": "fallen",
+   "facing": "-",
+   "kit": "light",
+   "training_use": "maybe",
+   "bbox_frac": [
+    0.01,
+    0.43,
+    0.25,
+    0.83
+   ],
+   "bbox_px": [
+    0,
+    2196,
+    1834,
+    4424
+   ],
+   "source_px": [
+    1834,
+    2228
+   ],
+   "crop": "crops/19d.jpg"
+  },
+  {
+   "id": "19e",
+   "description": "fallen warrior in green",
+   "view": "fallen",
+   "facing": "-",
+   "kit": "light",
+   "training_use": "maybe",
+   "bbox_frac": [
+    0.25,
+    0.67,
+    0.51,
+    0.91
+   ],
+   "bbox_px": [
+    1666,
+    3457,
+    3654,
+    4845
+   ],
+   "source_px": [
+    1988,
+    1388
+   ],
+   "crop": "crops/19e.jpg"
+  },
+  {
+   "id": "19f",
+   "description": "fallen warriors right",
+   "view": "fallen",
+   "facing": "-",
+   "kit": "light",
+   "training_use": "maybe",
+   "bbox_frac": [
+    0.74,
+    0.46,
+    1.0,
+    0.87
+   ],
+   "bbox_px": [
+    5096,
+    2354,
+    7000,
+    4634
+   ],
+   "source_px": [
+    1904,
+    2280
+   ],
+   "crop": "crops/19f.jpg"
+  }
+ ]
+}

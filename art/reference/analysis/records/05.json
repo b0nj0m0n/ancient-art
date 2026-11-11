@@ -1,0 +1,128 @@
+{
+ "index": 5,
+ "master": "figures-core/05_rp-11922587.jpg",
+ "master_px": [
+  3418,
+  5108
+ ],
+ "style_cluster": "early-soft",
+ "subject": "armoured commander seated on a camp stool above a wall; warriors below",
+ "themes": [
+  "commander",
+  "camp",
+  "banner",
+  "armour detail"
+ ],
+ "style_notes": "pale pink, olive and yellow on cream; calligraphic black line; large flat shapes",
+ "palette": [
+  {
+   "hex": "#eadfc8",
+   "share": 0.243
+  },
+  {
+   "hex": "#b6a387",
+   "share": 0.147
+  },
+  {
+   "hex": "#dcceb5",
+   "share": 0.127
+  },
+  {
+   "hex": "#9f8e76",
+   "share": 0.116
+  },
+  {
+   "hex": "#c5b59b",
+   "share": 0.113
+  },
+  {
+   "hex": "#827461",
+   "share": 0.1
+  },
+  {
+   "hex": "#d8c0a0",
+   "share": 0.099
+  },
+  {
+   "hex": "#5d554b",
+   "share": 0.055
+  }
+ ],
+ "figures": [
+  {
+   "id": "05a",
+   "description": "commander seated in full armour with horned helmet",
+   "view": "three-quarter",
+   "facing": "L",
+   "kit": "armoured",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.44,
+    0.04,
+    1.0,
+    0.64
+   ],
+   "bbox_px": [
+    1462,
+    143,
+    3418,
+    3330
+   ],
+   "source_px": [
+    1956,
+    3187
+   ],
+   "crop": "crops/05a.jpg"
+  },
+  {
+   "id": "05b",
+   "description": "warriors below (cut off by edge)",
+   "view": "partial",
+   "facing": "-",
+   "kit": "armoured",
+   "training_use": "maybe",
+   "bbox_frac": [
+    0.0,
+    0.67,
+    0.62,
+    1.0
+   ],
+   "bbox_px": [
+    0,
+    3361,
+    2160,
+    5108
+   ],
+   "source_px": [
+    2160,
+    1747
+   ],
+   "crop": "crops/05b.jpg"
+  },
+  {
+   "id": "05c",
+   "description": "banner and standard",
+   "view": "prop",
+   "facing": "-",
+   "kit": "-",
+   "training_use": "prop",
+   "bbox_frac": [
+    0.02,
+    0.07,
+    0.46,
+    0.62
+   ],
+   "bbox_px": [
+    27,
+    296,
+    1613,
+    3228
+   ],
+   "source_px": [
+    1586,
+    2932
+   ],
+   "crop": "crops/05c.jpg"
+  }
+ ]
+}

@@ -1,0 +1,228 @@
+{
+ "index": 6,
+ "master": "figures-core/06_rp-11923978.jpg",
+ "master_px": [
+  2950,
+  1448
+ ],
+ "style_cluster": "meiji-vivid",
+ "subject": "land battle in gunsmoke: mounted general, duelling samurai, a line of matchlock gunners",
+ "themes": [
+  "battle",
+  "gunsmoke",
+  "matchlocks",
+  "duel"
+ ],
+ "style_notes": "saturated reds and purples, heavy dark sky, dense detail, strong outlines",
+ "palette": [
+  {
+   "hex": "#58564c",
+   "share": 0.227
+  },
+  {
+   "hex": "#7a5f47",
+   "share": 0.17
+  },
+  {
+   "hex": "#6e6c60",
+   "share": 0.165
+  },
+  {
+   "hex": "#908870",
+   "share": 0.137
+  },
+  {
+   "hex": "#b1a485",
+   "share": 0.102
+  },
+  {
+   "hex": "#a57150",
+   "share": 0.074
+  },
+  {
+   "hex": "#423b33",
+   "share": 0.072
+  },
+  {
+   "hex": "#d7c19a",
+   "share": 0.053
+  }
+ ],
+ "figures": [
+  {
+   "id": "06a",
+   "description": "mounted general with war fan",
+   "view": "mounted",
+   "facing": "R",
+   "kit": "armoured",
+   "training_use": "reference-only",
+   "bbox_frac": [
+    0.04,
+    0.0,
+    0.34,
+    0.57
+   ],
+   "bbox_px": [
+    82,
+    0,
+    1038,
+    842
+   ],
+   "source_px": [
+    956,
+    842
+   ],
+   "crop": "crops/06a.jpg"
+  },
+  {
+   "id": "06b",
+   "description": "foot samurai pair",
+   "view": "three-quarter",
+   "facing": "R",
+   "kit": "armoured",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.0,
+    0.44,
+    0.17,
+    0.96
+   ],
+   "bbox_px": [
+    0,
+    619,
+    536,
+    1407
+   ],
+   "source_px": [
+    536,
+    788
+   ],
+   "crop": "crops/06b.jpg"
+  },
+  {
+   "id": "06c",
+   "description": "foot samurai pair with spear",
+   "view": "three-quarter",
+   "facing": "L",
+   "kit": "armoured",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.16,
+    0.45,
+    0.35,
+    0.91
+   ],
+   "bbox_px": [
+    436,
+    634,
+    1067,
+    1335
+   ],
+   "source_px": [
+    631,
+    701
+   ],
+   "crop": "crops/06c.jpg"
+  },
+  {
+   "id": "06d",
+   "description": "samurai seen from behind",
+   "view": "back",
+   "facing": "R",
+   "kit": "armoured",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.34,
+    0.38,
+    0.5,
+    0.79
+   ],
+   "bbox_px": [
+    967,
+    532,
+    1510,
+    1161
+   ],
+   "source_px": [
+    543,
+    629
+   ],
+   "crop": "crops/06d.jpg"
+  },
+  {
+   "id": "06e",
+   "description": "warrior in red lunging with spear",
+   "view": "three-quarter",
+   "facing": "L",
+   "kit": "armoured",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.45,
+    0.49,
+    0.63,
+    0.88
+   ],
+   "bbox_px": [
+    1292,
+    692,
+    1893,
+    1291
+   ],
+   "source_px": [
+    601,
+    599
+   ],
+   "crop": "crops/06e.jpg"
+  },
+  {
+   "id": "06f",
+   "description": "fallen warrior",
+   "view": "fallen",
+   "facing": "-",
+   "kit": "armoured",
+   "training_use": "maybe",
+   "bbox_frac": [
+    0.39,
+    0.75,
+    0.57,
+    0.94
+   ],
+   "bbox_px": [
+    1115,
+    1068,
+    1716,
+    1378
+   ],
+   "source_px": [
+    601,
+    310
+   ],
+   "crop": "crops/06f.jpg"
+  },
+  {
+   "id": "06g",
+   "description": "line of matchlock foot soldiers in conical hats",
+   "view": "profile",
+   "facing": "L",
+   "kit": "light",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.65,
+    0.56,
+    1.0,
+    0.96
+   ],
+   "bbox_px": [
+    1882,
+    793,
+    2950,
+    1407
+   ],
+   "source_px": [
+    1068,
+    614
+   ],
+   "crop": "crops/06g.jpg"
+  }
+ ]
+}

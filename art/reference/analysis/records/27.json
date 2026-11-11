@@ -1,0 +1,51 @@
+{
+ "index": 27,
+ "master": "figures-core/27_rp-7639335.jpg",
+ "master_px": [
+  8255,
+  4239
+ ],
+ "style_cluster": "late-edo-utagawa",
+ "subject": "ships breaking up in a storm sea",
+ "themes": [
+  "storm",
+  "sea",
+  "shipwreck"
+ ],
+ "style_notes": "blue-grey waves with white foam claws, red hull and sail accents",
+ "palette": [
+  {
+   "hex": "#8d9186",
+   "share": 0.219
+  },
+  {
+   "hex": "#b0a491",
+   "share": 0.151
+  },
+  {
+   "hex": "#cbbca4",
+   "share": 0.15
+  },
+  {
+   "hex": "#7b7971",
+   "share": 0.145
+  },
+  {
+   "hex": "#63635f",
+   "share": 0.124
+  },
+  {
+   "hex": "#4e4b47",
+   "share": 0.083
+  },
+  {
+   "hex": "#b57b66",
+   "share": 0.077
+  },
+  {
+   "hex": "#e6d8c2",
+   "share": 0.051
+  }
+ ],
+ "figures": []
+}

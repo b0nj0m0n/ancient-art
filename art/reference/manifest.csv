@@ -1,0 +1,48 @@
+index,filename,category,note,source,source_id,master_file,master_pixels,licence_verified
+2,image-from-rawpixel-id-10141552-original.jpg,figures-core,,rawpixel,10141552,figures-core/02_rp-10141552.jpg,1275x1799,no
+3,image-from-rawpixel-id-10142529-original.jpg,figures-core,,rawpixel,10142529,figures-core/03_rp-10142529.jpg,1799x1267,no
+4,image-from-rawpixel-id-10142813-original.jpg,figures-secondary,,rawpixel,10142813,figures-secondary/04_rp-10142813.jpg,1298x1799,no
+5,image-from-rawpixel-id-11922587-original.jpg,figures-core,,rawpixel,11922587,figures-core/05_rp-11922587.jpg,3418x5108,no
+6,image-from-rawpixel-id-11923978-original.jpg,figures-core,,rawpixel,11923978,figures-core/06_rp-11923978.jpg,2950x1448,no
+7,image-from-rawpixel-id-11931299-original.jpg,figures-core,,rawpixel,11931299,figures-core/07_rp-11931299.jpg,3014x1509,no
+8,image-from-rawpixel-id-11932087-original.jpg,figures-secondary,,rawpixel,11932087,figures-secondary/08_rp-11932087.jpg,5400x4000,no
+9,image-from-rawpixel-id-11932149-original.jpg,figures-core,,rawpixel,11932149,figures-core/09_rp-11932149.jpg,4044x2029,no
+10,image-from-rawpixel-id-13965122-original.jpg,figures-core,,rawpixel,13965122,figures-core/10_rp-13965122.jpg,2185x3215,no
+11,image-from-rawpixel-id-1613510-original.jpg,figures-core,,rawpixel,1613510,figures-core/11_rp-1613510.jpg,1347x1928,no
+12,image-from-rawpixel-id-1685981-original.jpg,figures-core,,rawpixel,1685981,figures-core/12_rp-1685981.jpg,3841x2566,no
+13,image-from-rawpixel-id-1699563-original.jpg,figures-core,,rawpixel,1699563,figures-core/13_rp-1699563.jpg,1243x1904,no
+14,image-from-rawpixel-id-3064476-original.jpg,landscapes,looks 20th-century; confirm public-domain status before use,rawpixel,3064476,landscapes/14_rp-3064476.jpg,1438x3256,no
+15,image-from-rawpixel-id-3229092-original.jpg,figures-core,,rawpixel,3229092,figures-core/15_rp-3229092.jpg,4344x6320,no
+16,image-from-rawpixel-id-3239259-original.jpg,figures-core,,rawpixel,3239259,figures-core/16_rp-3239259.jpg,5008x6988,no
+17,image-from-rawpixel-id-3263618-original.jpg,figures-secondary,,rawpixel,3263618,figures-secondary/17_rp-3263618.jpg,3000x1913,no
+18,image-from-rawpixel-id-3279762-original.jpg,figures-core,,rawpixel,3279762,figures-core/18_rp-3279762.jpg,1799x1233,no
+19,image-from-rawpixel-id-7132442-original.jpg,figures-core,,rawpixel,7132442,figures-core/19_rp-7132442.jpg,7000x5255,no
+20,image-from-rawpixel-id-7132496-original.jpg,figures-secondary,,rawpixel,7132496,figures-secondary/20_rp-7132496.jpg,7000x4911,no
+21,image-from-rawpixel-id-7133525-original.jpg,figures-secondary,,rawpixel,7133525,figures-secondary/21_rp-7133525.jpg,4055x5454,no
+22,image-from-rawpixel-id-7143089-original.jpg,set-aside,"later war print, modern uniforms",rawpixel,7143089,set-aside/22_rp-7143089.jpg,7000x4298,no
+23,image-from-rawpixel-id-7148281-original.jpg,set-aside,"later war print, modern uniforms",rawpixel,7148281,set-aside/23_rp-7148281.jpg,7000x4317,no
+24,image-from-rawpixel-id-7148980-original.jpg,figures-secondary,,rawpixel,7148980,figures-secondary/24_rp-7148980.jpg,4120x5430,no
+25,image-from-rawpixel-id-7637591-original.jpg,screens,,rawpixel,7637591,screens/25_rp-7637591.jpg,9512x4254,no
+26,image-from-rawpixel-id-7639167-original.jpg,figures-core,,rawpixel,7639167,figures-core/26_rp-7639167.jpg,4910x2517,no
+27,image-from-rawpixel-id-7639335-original.jpg,figures-core,,rawpixel,7639335,figures-core/27_rp-7639335.jpg,8255x4239,no
+28,image-from-rawpixel-id-7653666-original.jpg,figures-core,,rawpixel,7653666,figures-core/28_rp-7653666.jpg,9891x4975,no
+29,image-from-rawpixel-id-7660772-original.jpg,set-aside,"sumo sheet, off-theme",rawpixel,7660772,set-aside/29_rp-7660772.jpg,4232x6191,no
+30,image-from-rawpixel-id-7661272-original.jpg,screens,,rawpixel,7661272,screens/30_rp-7661272.jpg,9271x3987,no
+31,image-from-rawpixel-id-8155554-original.jpg,figures-secondary,,rawpixel,8155554,figures-secondary/31_rp-8155554.jpg,1956x1322,no
+32,image-from-rawpixel-id-8204521-original.jpg,figures-secondary,,rawpixel,8204521,figures-secondary/32_rp-8204521.jpg,3840x2216,no
+33,image-from-rawpixel-id-8250534-original.jpg,screens,,rawpixel,8250534,screens/33_rp-8250534.jpg,2000x987,no
+34,image-from-rawpixel-id-8848354-original.jpg,landscapes,,rawpixel,8848354,landscapes/34_rp-8848354.jpg,1369x2000,no
+35,master-pnp-jpd-00000-00046u.jpg,landscapes,,Library of Congress (jpd),jpd-00046u,landscapes/35_loc-jpd-00046u.jpg,9058x6189,no
+36,master-pnp-jpd-00100-00154u.jpg,set-aside,"civilian figures, off-theme for soldiers",Library of Congress (jpd),jpd-00154u,set-aside/36_loc-jpd-00154u.jpg,3893x5393,no
+37,master-pnp-jpd-00500-00507u.jpg,landscapes,,Library of Congress (jpd),jpd-00507u,landscapes/37_loc-jpd-00507u.jpg,8922x6095,no
+38,master-pnp-jpd-01200-01271u.jpg,landscapes,,Library of Congress (jpd),jpd-01271u,landscapes/38_loc-jpd-01271u.jpg,5882x8669,no
+39,master-pnp-jpd-01300-01307u.jpg,landscapes,,Library of Congress (jpd),jpd-01307u,landscapes/39_loc-jpd-01307u.jpg,5966x8608,no
+40,master-pnp-jpd-01300-01317u.jpg,landscapes,,Library of Congress (jpd),jpd-01317u,landscapes/40_loc-jpd-01317u.jpg,5975x8609,no
+41,master-pnp-jpd-01300-01361u.jpg,landscapes,,Library of Congress (jpd),jpd-01361u,landscapes/41_loc-jpd-01361u.jpg,6010x8693,no
+42,master-pnp-jpd-01500-01578u.jpg,landscapes,,Library of Congress (jpd),jpd-01578u,landscapes/42_loc-jpd-01578u.jpg,5893x8565,no
+43,master-pnp-jpd-01500-01581u.jpg,landscapes,,Library of Congress (jpd),jpd-01581u,landscapes/43_loc-jpd-01581u.jpg,5870x8589,no
+44,master-pnp-jpd-01800-01822u.jpg,landscapes,,Library of Congress (jpd),jpd-01822u,landscapes/44_loc-jpd-01822u.jpg,3418x2212,no
+45,master-pnp-jpd-02000-02015u.jpg,landscapes,,Library of Congress (jpd),jpd-02015u,landscapes/45_loc-jpd-02015u.jpg,8890x6139,no
+46,master-pnp-jpd-02400-02457u.jpg,landscapes,,Library of Congress (jpd),jpd-02457u,landscapes/46_loc-jpd-02457u.jpg,8620x5970,no
+47,master-pnp-jpd-02400-02467u.jpg,landscapes,,Library of Congress (jpd),jpd-02467u,landscapes/47_loc-jpd-02467u.jpg,8628x5910,no
+48,master-pnp-jpd-02600-02608u.jpg,set-aside,"civilian figures, off-theme for soldiers",Library of Congress (jpd),jpd-02608u,set-aside/48_loc-jpd-02608u.jpg,,no

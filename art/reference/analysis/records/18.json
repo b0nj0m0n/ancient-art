@@ -1,0 +1,127 @@
+{
+ "index": 18,
+ "master": "figures-core/18_rp-3279762.jpg",
+ "master_px": [
+  1799,
+  1233
+ ],
+ "style_cluster": "late-edo-utagawa",
+ "subject": "palace courtyard: a samurai raises his sword and is restrained",
+ "themes": [
+  "palace",
+  "quarrel",
+  "theatre"
+ ],
+ "style_notes": "small-format framed scene, olive and ochre, flat colour, modest detail",
+ "palette": [
+  {
+   "hex": "#ab8857",
+   "share": 0.2
+  },
+  {
+   "hex": "#7f5e39",
+   "share": 0.165
+  },
+  {
+   "hex": "#52532c",
+   "share": 0.161
+  },
+  {
+   "hex": "#6b4b2e",
+   "share": 0.147
+  },
+  {
+   "hex": "#967546",
+   "share": 0.123
+  },
+  {
+   "hex": "#474126",
+   "share": 0.119
+  },
+  {
+   "hex": "#2e2d25",
+   "share": 0.057
+  },
+  {
+   "hex": "#1e1c1a",
+   "share": 0.027
+  }
+ ],
+ "figures": [
+  {
+   "id": "18a",
+   "description": "samurai in yellow court dress, sword raised",
+   "view": "three-quarter",
+   "facing": "L",
+   "kit": "unarmoured",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.49,
+    0.41,
+    0.73,
+    0.87
+   ],
+   "bbox_px": [
+    859,
+    490,
+    1334,
+    1087
+   ],
+   "source_px": [
+    475,
+    597
+   ],
+   "crop": "crops/18a.jpg"
+  },
+  {
+   "id": "18b",
+   "description": "fallen pair",
+   "view": "fallen",
+   "facing": "-",
+   "kit": "unarmoured",
+   "training_use": "maybe",
+   "bbox_frac": [
+    0.1,
+    0.55,
+    0.51,
+    0.87
+   ],
+   "bbox_px": [
+    158,
+    663,
+    939,
+    1087
+   ],
+   "source_px": [
+    781,
+    424
+   ],
+   "crop": "crops/18b.jpg"
+  },
+  {
+   "id": "18c",
+   "description": "men restraining (group)",
+   "view": "three-quarter",
+   "facing": "L",
+   "kit": "unarmoured",
+   "training_use": "maybe",
+   "bbox_frac": [
+    0.67,
+    0.46,
+    0.93,
+    0.81
+   ],
+   "bbox_px": [
+    1183,
+    552,
+    1694,
+    1013
+   ],
+   "source_px": [
+    511,
+    461
+   ],
+   "crop": "crops/18c.jpg"
+  }
+ ]
+}

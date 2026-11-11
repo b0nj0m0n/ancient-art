@@ -1,0 +1,177 @@
+{
+ "scope": "17 core figure prints (figures-core). Written by Claude from viewing each print; bounding boxes are by-eye estimates checked on contact sheets, not measured.",
+ "counts": {
+  "prints": 17,
+  "figure_crops": 82,
+  "by_training_use": {
+   "maybe": 23,
+   "yes": 52,
+   "prop": 1,
+   "reference-only": 6
+  },
+  "usable_by_view": {
+   "three-quarter": 27,
+   "profile": 15,
+   "small-scale": 5,
+   "back": 2,
+   "front": 2,
+   "mixed": 1
+  },
+  "usable_by_kit": {
+   "armoured": 16,
+   "unarmoured": 15,
+   "light": 8,
+   "commoner": 13
+  },
+  "usable_by_cluster": {
+   "early-soft": 7,
+   "late-edo-utagawa": 20,
+   "meiji-vivid": 12,
+   "landscape-figures": 13
+  }
+ },
+ "style_clusters": {
+  "late-edo-utagawa": {
+   "prints": [
+    3,
+    9,
+    10,
+    11,
+    13,
+    16,
+    18,
+    27,
+    28
+   ],
+   "look": "bold black keyline of even weight; flat colour fills; dense repeat patterns on cloth and armour; Prussian blue, teal and vermilion against grey or black grounds; muscular limbs with white highlight strokes; expressive, heavy-browed faces"
+  },
+  "meiji-vivid": {
+   "prints": [
+    6,
+    7,
+    15,
+    26
+   ],
+   "look": "finer line, brighter synthetic reds, purples and cobalt; more modelling in faces; either very dense (06, 07) or clean figures on near-white paper (26)"
+  },
+  "early-soft": {
+   "prints": [
+    2,
+    5,
+    19
+   ],
+   "look": "limited soft palette (pink, olive, tan, dull red) on cream paper; calligraphic line; large open shapes; little pattern"
+  },
+  "landscape-figures": {
+   "prints": [
+    12
+   ],
+   "look": "small simplified figures in clean profile; thin line; two or three flat colours per figure; graded ground"
+  }
+ },
+ "shared_conventions": {
+  "line": "every shape is closed by a dark keyline (ink, not pure black); line weight is near-constant within a figure; folds are drawn as a few interior lines, not shading",
+  "colour": "flat fills, no gradients inside figures; gradients appear only in sky and ground (bokashi); one accent colour usually dominates each figure",
+  "pattern": "cloth and armour carry small repeat motifs (checks, waves, crests, lacing stripes) that read as texture at a distance",
+  "faces": "three-quarter faces with strong brows on large figures; small figures reduce to a dot or dash for eyes and a single line for the mouth",
+  "armour": "lamellar plates drawn as horizontal stripes of lacing colour; large shoulder guards; horned or crested helmets for commanders; foot soldiers in conical hats, short coats, bare or wrapped shins",
+  "paper": "aged cream-tan ground shows through everywhere and warms every colour"
+ },
+ "palette": {
+  "pigments": [
+   {
+    "family": "red",
+    "share": 0.0531,
+    "prints": 15,
+    "mid": "#a14f46",
+    "dark": "#642f24",
+    "light": "#ce5956"
+   },
+   {
+    "family": "orange",
+    "share": 0.0627,
+    "prints": 16,
+    "mid": "#815735",
+    "dark": "#523622",
+    "light": "#b38250"
+   },
+   {
+    "family": "yellow",
+    "share": 0.0108,
+    "prints": 13,
+    "mid": "#665a2e",
+    "dark": "#4a4a24",
+    "light": "#ba9d50"
+   },
+   {
+    "family": "green",
+    "share": 0.0052,
+    "prints": 11,
+    "mid": "#4f572e",
+    "dark": "#404928",
+    "light": "#717f56"
+   },
+   {
+    "family": "teal",
+    "share": 0.0214,
+    "prints": 11,
+    "mid": "#4e787b",
+    "dark": "#315254",
+    "light": "#608b8e"
+   },
+   {
+    "family": "blue",
+    "share": 0.006,
+    "prints": 8,
+    "mid": "#273f6e",
+    "dark": "#2c3756",
+    "light": "#2e4e7b"
+   }
+  ],
+  "neutrals": [
+   {
+    "name": "ink black",
+    "hex": "#2b2c28",
+    "share": 0.0215
+   },
+   {
+    "name": "dark grey",
+    "hex": "#4f504a",
+    "share": 0.1423
+   },
+   {
+    "name": "mid grey",
+    "hex": "#7c7f73",
+    "share": 0.1424
+   },
+   {
+    "name": "light grey",
+    "hex": "#b0ad9a",
+    "share": 0.0775
+   },
+   {
+    "name": "paper white",
+    "hex": "#dcd5c6",
+    "share": 0.0644
+   },
+   {
+    "name": "aged paper",
+    "hex": "#bfac8c",
+    "share": 0.2281
+   }
+  ],
+  "note": "purple and pink occur (06, 07, 13, 26) but fell under the share threshold; add by hand if wanted"
+ },
+ "recommendation_for_phase_2": {
+  "figure_construction": "model sprite proportions and simplification on the small profile figures: 12 (runners), 26a-d (foot soldiers), 06g (gunner line), 02e and 28b-c (small melee groups)",
+  "costume_and_pattern": "take armour, pattern and colour-blocking vocabulary from the late-edo-utagawa cluster (09, 10, 16, 28) and 15",
+  "keyline": "use the ink neutral for outlines, not pure black",
+  "caution": "the clusters differ enough that a style LoRA trained on all 17 will average them; pick one cluster as the target or add a coherent single-artist set first"
+ },
+ "gaps": [
+  "few true profile figures apart from print 12",
+  "foot soldiers with spears are almost absent; the only rank-and-file are the gunners in 06g and the signal party in 26",
+  "several strong crops come from low-resolution scans (02, 03, 11, 13, 18 are under 2000 px)",
+  "print 27 has no usable figures and belongs with landscapes/palette"
+ ]
+}
