@@ -8,8 +8,8 @@ extends Node2D
 @export var strip_height: float = 52.0
 @export var art_seed: int = 77
 
-const GREEN := Color("62744f")
-const TUFT := Color("47553a")
+const GREEN := Color("6c7150")
+const TUFT := Color("4f5a3c")
 
 
 func _ready() -> void:
@@ -40,4 +40,4 @@ func _draw() -> void:
 		for lean in [-5.0, 0.0, 5.0]:
 			var tip := base + Vector2(lean + rng.randf_range(-2.0, 2.0), -h * (0.7 if lean != 0.0 else 1.0))
 			shapes.append([PackedVector2Array([base + Vector2(-2, 0), tip, base + Vector2(2, 0)]), TUFT])
-	PaperDraw.draw_figure(self, shapes, [], Transform2D.IDENTITY, 1.8)
+	PaperDraw.draw_figure(self, shapes, [], Transform2D.IDENTITY, 0.9)

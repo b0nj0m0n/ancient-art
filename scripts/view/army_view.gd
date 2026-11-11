@@ -54,7 +54,7 @@ func _draw_soldier(s: Soldier) -> void:
 	var lift := BACK_ROW_LIFT if s.row == 1 else 0.0
 	var angle := sin(_time * fig.sway_speed + fig.sway_phase) * SWAY_ANGLE
 	var xf := Transform2D(angle, Vector2(size * facing, size), 0.0, Vector2(s.x, ground_y(s.x) - lift + 1.0))
-	PaperDraw.draw_figure(self, fig.shapes, fig.details, xf, 1.8)
+	PaperDraw.draw_figure(self, fig.shapes, fig.details, xf, 0.9)
 
 
 func _draw_nobori(squad: Squad) -> void:
@@ -79,4 +79,4 @@ func _draw_nobori(squad: Squad) -> void:
 	# Banner shapes are built at figure size 1 around the base, then scaled.
 	var xf := Transform2D(0.0, Vector2(figure_size, figure_size), 0.0, base) \
 		* Transform2D(0.0, -base)
-	PaperDraw.draw_figure(self, shapes, [], xf, 1.8)
+	PaperDraw.draw_figure(self, shapes, [], xf, 0.9)

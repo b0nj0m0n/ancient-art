@@ -3,13 +3,13 @@ extends Node2D
 ## Draws the trees and the town as cut-paper set pieces standing just behind
 ## the battle line. Positions and shapes come from the skirmish seed.
 
-const PINE_GREEN := Color("3f5a3c")
-const CEDAR_GREEN := Color("4d6646")
-const BARK := Color("4a3a30")
-const WALL := Color("f2ede0")
+const PINE_GREEN := Color("4f5a3c")
+const CEDAR_GREEN := Color("5a6646")
+const BARK := Color("3d332c")
+const WALL := Color("ece2cc")
 const TIMBER := Color("3a2f28")
-const THATCH := Color("8a7350")
-const TILE := Color("5d5a58")
+const THATCH := Color("8f7a58")
+const TILE := Color("4f5356")
 ## How far up the page the scenery stands, to sit behind the soldiers.
 const BACK_LIFT := 18.0
 
@@ -39,7 +39,7 @@ func _draw() -> void:
 	for piece in _pieces:
 		var base: Vector2 = piece[2]
 		var xf := Transform2D(0.0, Vector2(piece_size, piece_size), 0.0, base) * Transform2D(0.0, -base)
-		PaperDraw.draw_figure(self, piece[0], piece[1], xf, 2.0)
+		PaperDraw.draw_figure(self, piece[0], piece[1], xf, 1.0)
 
 
 func _ground(x: float) -> Vector2:
