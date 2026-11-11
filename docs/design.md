@@ -219,3 +219,8 @@ Decisions made by Ben for the first prototype.
 - **The battle never pauses** once the fighting starts.
 - **Command bar:** holds 3 orders. An attack or a retreat costs 1. One order's worth refills about every 6 seconds. All of these values can be tuned.
 - **Prototype defaults, to be confirmed by Ben:** the player picks a side on the start screen and the AI plays the other. On the samurai/archer side the commander is with the samurai. The town blocks arrows and gives cover, like the trees.
+- **Advance (built):** after a short pause, squads march toward the enemy and
+  halt when the front ranks meet. Climbing slows a squad and going downhill
+  speeds it up. Speeds and slope effects live in `data/battle_tuning.tres` and
+  `data/troops/`. *(Prototype default, to be confirmed: archers hold their
+  position instead of marching, until ranged combat exists.)*

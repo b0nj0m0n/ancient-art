@@ -9,3 +9,6 @@ var soldiers: Array[Soldier] = []
 var has_commander: bool = false
 ## Where the squad's banner stands, in field units.
 var anchor_x: float = 0.0
+var prev_anchor_x: float = 0.0
+## True while the squad is marching this tick.
+var moving: bool = false

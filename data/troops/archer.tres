@@ -9,3 +9,5 @@ weapon = 2
 headgear = 2
 body_colour = Color(0.43529412, 0.41568628, 0.2901961, 1)
 figure_scale = 0.98
+march_speed = 32.0
+holds_position = true

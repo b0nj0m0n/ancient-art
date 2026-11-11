@@ -4,6 +4,7 @@ extends Resource
 
 @export var rng_seed: int = 1560
 @export var terrain: Terrain
+@export var tuning: BattleTuning
 @export var left: SideSetup
 @export var right: SideSetup
 

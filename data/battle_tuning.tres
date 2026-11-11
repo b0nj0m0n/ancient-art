@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BattleTuning" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/sim/battle_tuning.gd" id="1_tuning"]
+
+[resource]
+script = ExtResource("1_tuning")
+tick_rate = 20
+march_delay = 1.5
+uphill_slowdown = 1.5
+downhill_speedup = 0.8
+contact_gap = 16.0

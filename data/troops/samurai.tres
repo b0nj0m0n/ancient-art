@@ -10,3 +10,4 @@ headgear = 1
 heavy_armour = true
 body_colour = Color(0.5568628, 0.16862746, 0.14509805, 1)
 figure_scale = 1.08
+march_speed = 30.0

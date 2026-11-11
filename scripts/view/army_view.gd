@@ -11,6 +11,18 @@ const SWAY_ANGLE := 0.025
 ## Size of every figure on screen. Bigger reads better on a phone.
 @export var figure_size: float = 1.45
 
+@export_group("Walking")
+## Distance covered by one step, in field units. Steps follow distance walked,
+## so feet never slide.
+@export var stride_length: float = 9.0
+## How high a soldier bobs with each step.
+@export var stride_bob: float = 2.5
+## Forward lean while marching, in radians.
+@export var march_lean: float = 0.08
+
+## How far between the last tick and the next we are (0 to 1). Set by main.
+var alpha: float = 1.0
+
 var battle: Battle
 var _figures: Dictionary = {}  # Soldier -> SoldierFigure
 var _draw_order: Array[Soldier] = []
@@ -50,18 +62,26 @@ func _draw_soldier(s: Soldier) -> void:
 	var fig: SoldierFigure = _figures[s]
 	var depth := BACK_ROW_SCALE if s.row == 1 else 1.0
 	var size := fig.scale * depth * figure_size
-	var facing := 1.0 if s.side == Battle.LEFT else -1.0
+	var facing := Battle.facing(s.side)
 	var lift := BACK_ROW_LIFT if s.row == 1 else 0.0
+	var x := lerpf(s.prev_x, s.x, alpha)
 	var angle := sin(_time * fig.sway_speed + fig.sway_phase) * SWAY_ANGLE
-	var xf := Transform2D(angle, Vector2(size * facing, size), 0.0, Vector2(s.x, ground_y(s.x) - lift + 1.0))
+	var bob := 0.0
+	if s.squad.moving:
+		# Each step lifts the body; steps are tied to distance walked.
+		var phase := (x * facing + fig.sway_phase * stride_length) / stride_length * PI
+		bob = absf(sin(phase)) * stride_bob * size
+		angle = facing * march_lean + sin(phase) * SWAY_ANGLE
+	var xf := Transform2D(angle, Vector2(size * facing, size), 0.0,
+		Vector2(x, ground_y(x) - lift + 1.0 - bob))
 	PaperDraw.draw_figure(self, fig.shapes, fig.details, xf, 0.9)
 
 
 func _draw_nobori(squad: Squad) -> void:
 	# A tall squad banner just behind the squad, so you can find (and later tap) it.
 	var side_def := battle.side_setup(squad.side)
-	var facing := 1.0 if squad.side == Battle.LEFT else -1.0
-	var base_x := squad.anchor_x - facing * 16.0
+	var facing := Battle.facing(squad.side)
+	var base_x := lerpf(squad.prev_anchor_x, squad.anchor_x, alpha) - facing * 16.0
 	var base := Vector2(base_x, ground_y(base_x) - BACK_ROW_LIFT - 2.0)
 	var flutter := sin(_time * 1.4 + squad.index) * 1.5
 	var top := base + Vector2(flutter, -100.0)
