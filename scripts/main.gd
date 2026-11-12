@@ -11,6 +11,7 @@ const MAX_TICKS_PER_FRAME := 5
 @onready var _scenery: SceneryView = $Field/Scenery
 @onready var _army: ArmyView = $Field/Army
 @onready var _restart: Button = $HUD/Restart
+@onready var _result: Label = $HUD/Result
 
 var _battle: Battle
 var _accumulator: float = 0.0
@@ -28,6 +29,7 @@ func _start_battle() -> void:
 	_battle = Battle.new(setup)
 	_accumulator = 0.0
 	_army.show_battle(_battle)
+	_result.visible = false
 
 
 func _process(delta: float) -> void:
@@ -40,3 +42,8 @@ func _process(delta: float) -> void:
 	if ticks == MAX_TICKS_PER_FRAME:
 		_accumulator = 0.0
 	_army.alpha = clampf(_accumulator / _battle.dt, 0.0, 1.0)
+	if _battle.is_over() and not _result.visible:
+		# Words, never numbers.
+		var victor := _battle.side_setup(_battle.winner).side_name.to_lower()
+		_result.text = "The field belongs to the %s" % victor
+		_result.visible = true

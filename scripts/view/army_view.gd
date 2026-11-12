@@ -23,6 +23,16 @@ const SWAY_ANGLE := 0.025
 ## Forward lean while marching, in radians.
 @export var march_lean: float = 0.08
 
+@export_group("Fighting")
+## Seconds a strike, a flinch from a blow, and a fall take to play.
+@export var strike_seconds: float = 0.4
+@export var flinch_seconds: float = 0.35
+@export var fall_seconds: float = 0.5
+## Seconds an ink splash stays visible where a blow lands.
+@export var splash_seconds: float = 0.6
+
+const SPLASH_RED := Color("8a2a20")
+
 ## How far between the last tick and the next we are (0 to 1). Set by main.
 var alpha: float = 1.0
 
@@ -67,13 +77,28 @@ func _draw() -> void:
 	if battle == null:
 		return
 	for squad in battle.squads:
-		_draw_nobori(squad)
+		if not squad.standing().is_empty():
+			_draw_nobori(squad)
+	# The fallen lie behind those still fighting.
 	for s in _draw_order:
-		_draw_soldier(s)
+		if not s.is_standing():
+			_draw_soldier(s)
+	for s in _draw_order:
+		if s.is_standing():
+			_draw_soldier(s)
+	for s in _draw_order:
+		_draw_wound(s)
 
 
 func ground_y(x: float) -> float:
 	return HillsideView.FIELD_HEIGHT - battle.terrain.height_at(x)
+
+
+## Seconds since a tick, using the drawing position between ticks.
+func _since(tick: int) -> float:
+	if tick < 0:
+		return INF
+	return (battle.tick_count + alpha - tick) * battle.dt
 
 
 func _draw_soldier(s: Soldier) -> void:
@@ -81,31 +106,76 @@ func _draw_soldier(s: Soldier) -> void:
 	var facing := Battle.facing(s.side)
 	var lift := BACK_ROW_LIFT if s.row == 1 else 0.0
 	var x := lerpf(s.prev_x, s.x, alpha)
-	var marching := s.squad.moving
+	var walking := s.is_standing() and s.x != s.prev_x
+	var strike := clampf(_since(s.last_strike_tick) / strike_seconds, 0.0, 1.0)
+	var flinch := clampf(_since(s.last_hit_tick) / flinch_seconds, 0.0, 1.0)
+	var fall := clampf(_since(s.down_tick) / fall_seconds, 0.0, 1.0) if not s.is_standing() else 0.0
+	var feet := Vector2(x, ground_y(x) - lift + 1.0)
 	var rigged := _figures[s] as RiggedFigure
 	if rigged != null:
-		# Rigged art animates its own legs and arms; add only the lean and sway.
 		var rig_size := rigged.scale * depth * figure_size
 		var rig_angle := sin(_time * rigged.sway_speed + rigged.sway_phase) * SWAY_ANGLE
-		if marching:
+		if walking:
 			rig_angle += facing * march_lean * 0.5
-		var rig_xf := Transform2D(rig_angle, Vector2(rig_size * facing, rig_size), 0.0,
-			Vector2(x, ground_y(x) - lift + 1.0))
-		var anim := rigged_walk_animation if marching else rigged_rest_animation
-		rigged.draw(self, rig_xf, rigged.pose_at(anim, _time))
+		var pose: Dictionary
+		if not s.is_standing():
+			pose = RiggedFigure.blend(rigged.pose_at("recoil", 0.0), rigged.pose_at("down", 0.0), fall)
+			rig_angle = 0.0
+		elif strike < 1.0:
+			pose = RiggedFigure.blend(rigged.pose_at("ready", 0.0), rigged.pose_at("thrust", 0.0), sin(strike * PI))
+		elif flinch < 1.0:
+			pose = RiggedFigure.blend(rigged.pose_at("recoil", 0.0), rigged.pose_at("ready", 0.0), flinch)
+		elif walking:
+			pose = rigged.pose_at(rigged_walk_animation, _time)
+		elif s.state == Soldier.State.FIGHTING:
+			pose = rigged.pose_at("ready", 0.0)
+		else:
+			pose = rigged.pose_at(rigged_rest_animation, _time)
+		var rig_xf := Transform2D(rig_angle, Vector2(rig_size * facing, rig_size), 0.0, feet)
+		rigged.draw(self, rig_xf, pose)
 		return
 	var fig: SoldierFigure = _figures[s]
 	var size := fig.scale * depth * figure_size
 	var angle := sin(_time * fig.sway_speed + fig.sway_phase) * SWAY_ANGLE
-	var bob := 0.0
-	if marching:
+	var offset := Vector2.ZERO
+	if not s.is_standing():
+		# Topples backwards and lies where they fell.
+		angle = -facing * PI * 0.5 * ease(fall, 0.4)
+		offset.y = -2.0 * fall
+	elif strike < 1.0:
+		# Lunge forward with the blow.
+		var k := sin(strike * PI)
+		offset.x = facing * 6.0 * size * k
+		angle = facing * 0.18 * k
+	elif flinch < 1.0:
+		var k := sin(flinch * PI)
+		offset.x = -facing * 3.0 * size * k
+		angle = -facing * 0.12 * k
+	elif walking:
 		# Each step lifts the body; steps are tied to distance walked.
 		var phase := (x * facing + fig.sway_phase * stride_length) / stride_length * PI
-		bob = absf(sin(phase)) * stride_bob * size
+		offset.y = -absf(sin(phase)) * stride_bob * size
 		angle = facing * march_lean + sin(phase) * SWAY_ANGLE
-	var xf := Transform2D(angle, Vector2(size * facing, size), 0.0,
-		Vector2(x, ground_y(x) - lift + 1.0 - bob))
+	var xf := Transform2D(angle, Vector2(size * facing, size), 0.0, feet + offset)
 	PaperDraw.draw_figure(self, fig.shapes, fig.details, xf, 0.9)
+
+
+## A splash of ink where a blow lands, fading quickly.
+func _draw_wound(s: Soldier) -> void:
+	var t := _since(s.last_hit_tick)
+	if t >= splash_seconds:
+		return
+	var x := lerpf(s.prev_x, s.x, alpha)
+	var lift := BACK_ROW_LIFT if s.row == 1 else 0.0
+	var centre := Vector2(x, ground_y(x) - lift - 28.0 * figure_size)
+	var rng := RandomNumberGenerator.new()
+	rng.seed = s.id * 7919 + s.last_hit_tick
+	var fade := 1.0 - t / splash_seconds
+	for i in 6:
+		var off := Vector2(rng.randf_range(-7.0, 7.0), rng.randf_range(-8.0, 6.0)) * (0.6 + t * 2.0)
+		var colour := SPLASH_RED if i % 3 else Palette.INK
+		colour.a = 0.85 * fade
+		draw_circle(centre + off, rng.randf_range(1.2, 3.2) * figure_size * 0.7, colour)
 
 
 func _draw_nobori(squad: Squad) -> void:
