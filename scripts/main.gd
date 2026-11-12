@@ -12,6 +12,8 @@ const MAX_TICKS_PER_FRAME := 5
 @onready var _army: ArmyView = $Field/Army
 @onready var _restart: Button = $HUD/Restart
 @onready var _result: Label = $HUD/Result
+@onready var _orders: OrderInput = $Orders
+@onready var _bar: CommandBarView = $HUD/CommandBar
 
 var _battle: Battle
 var _accumulator: float = 0.0
@@ -21,6 +23,9 @@ func _ready() -> void:
 	_field.field_width = setup.terrain.field_width
 	_hillside.terrain = setup.terrain
 	_scenery.build(setup)
+	_orders.army = _army
+	_orders.bar = _bar
+	_orders.retreat_button = $HUD/Retreat
 	_restart.pressed.connect(_start_battle)
 	_start_battle()
 
@@ -29,6 +34,8 @@ func _start_battle() -> void:
 	_battle = Battle.new(setup)
 	_accumulator = 0.0
 	_army.show_battle(_battle)
+	_orders.reset(_battle)
+	_bar.battle = _battle
 	_result.visible = false
 
 

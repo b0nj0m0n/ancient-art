@@ -32,6 +32,13 @@ const SWAY_ANGLE := 0.025
 @export var splash_seconds: float = 0.6
 
 const SPLASH_RED := Color("8a2a20")
+## Seconds the ring stays on a squad you've just ordered an attack on.
+const FLASH_SECONDS := 0.9
+
+## The player's selected squad (drawn with a vermilion ring), or null.
+var selected: Squad = null
+var _flash_squad: Squad = null
+var _flash_at: float = -10.0
 
 ## How far between the last tick and the next we are (0 to 1). Set by main.
 var alpha: float = 1.0
@@ -47,8 +54,16 @@ func _ready() -> void:
 	texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
 
 
+## Briefly ring a squad, to confirm it has just been ordered against.
+func flash(squad: Squad) -> void:
+	_flash_squad = squad
+	_flash_at = _time
+
+
 func show_battle(b: Battle) -> void:
 	battle = b
+	selected = null
+	_flash_squad = null
 	_figures.clear()
 	for s in battle.soldiers:
 		_figures[s] = _make_figure(s)
@@ -76,12 +91,16 @@ func _process(delta: float) -> void:
 func _draw() -> void:
 	if battle == null:
 		return
+	if selected != null:
+		_draw_ring(selected, Palette.VERMILION, 1.0)
+	if _flash_squad != null and _time - _flash_at < FLASH_SECONDS:
+		_draw_ring(_flash_squad, Palette.INK, 1.0 - (_time - _flash_at) / FLASH_SECONDS)
 	for squad in battle.squads:
 		if not squad.standing().is_empty():
 			_draw_nobori(squad)
-	# The fallen lie behind those still fighting.
+	# The fallen lie behind those still fighting. Those who fled are gone.
 	for s in _draw_order:
-		if not s.is_standing():
+		if s.state == Soldier.State.DOWN:
 			_draw_soldier(s)
 	for s in _draw_order:
 		if s.is_standing():
@@ -94,6 +113,30 @@ func ground_y(x: float) -> float:
 	return HillsideView.FIELD_HEIGHT - battle.terrain.height_at(x)
 
 
+## An ink ring on the ground around a squad's standing soldiers.
+func _draw_ring(squad: Squad, colour: Color, strength: float) -> void:
+	var standing := squad.standing()
+	if standing.is_empty():
+		return
+	var lo := INF
+	var hi := -INF
+	for s in standing:
+		var x := lerpf(s.prev_x, s.x, alpha)
+		lo = minf(lo, x)
+		hi = maxf(hi, x)
+	var mid := (lo + hi) * 0.5
+	var centre := Vector2(mid, ground_y(mid) + 3.0)
+	var radius := Vector2((hi - lo) * 0.5 + 22.0, 10.0)
+	var pts := PackedVector2Array()
+	for i in 41:
+		var a := TAU * i / 40.0
+		# A slightly uneven brush ring, thicker at the front.
+		pts.append(centre + Vector2(cos(a) * radius.x, sin(a) * radius.y * (1.0 + 0.15 * sin(a * 3.0))))
+	var c := colour
+	c.a = strength
+	draw_polyline(pts, c, 4.0, true)
+
+
 ## Seconds since a tick, using the drawing position between ticks.
 func _since(tick: int) -> float:
 	if tick < 0:
@@ -104,6 +147,8 @@ func _since(tick: int) -> float:
 func _draw_soldier(s: Soldier) -> void:
 	var depth := BACK_ROW_SCALE if s.row == 1 else 1.0
 	var facing := Battle.facing(s.side)
+	if s.state == Soldier.State.FLEEING:
+		facing = -facing  # Running for home.
 	var lift := BACK_ROW_LIFT if s.row == 1 else 0.0
 	var x := lerpf(s.prev_x, s.x, alpha)
 	var walking := s.is_standing() and s.x != s.prev_x
