@@ -5,6 +5,8 @@ extends Resource
 @export var rng_seed: int = 1560
 @export var terrain: Terrain
 @export var tuning: BattleTuning
+## The side the player commands. The other side is run by the computer.
+@export_enum("Left", "Right") var player_side: int = 1
 @export var left: SideSetup
 @export var right: SideSetup
 

@@ -244,3 +244,21 @@ Decisions made by Ben for the first prototype.
   - *(Prototype defaults, to be confirmed: archers wait by the village and fight
     weakly with a knife if reached; the matchup is tuned to roughly even,
     ashigaru 55% and samurai with archers 45%.)*
+- **Orders and the command bar (built).**
+  - Tap one of your squads to select it (a vermilion ink ring), then tap an
+    enemy squad to attack it, or press **Retreat**. Tapping empty ground
+    deselects. Taps land generously around a squad, sized for a thumb.
+  - Each order spends the command bar, drawn as one brush stroke with an ink
+    tick per order. It holds 3 orders and refills one every 6 seconds. If it is
+    too low, the order is refused and the bar shakes. All values are in
+    `data/battle_tuning.tres`.
+  - **Retreat:** the squad turns and runs for its home edge; soldiers who reach
+    it leave the skirmish. A retreating squad can't be given new orders.
+  - Orders are logged with their tick, so a battle replays exactly from its
+    seed plus its order log.
+  - *(Prototype defaults, to be confirmed: the player commands the right side,
+    set by `player_side` in `data/skirmish_setup.tres`. The player's squads
+    hold until ordered but defend themselves if reached. The computer's side
+    keeps its automatic advance until the AI step.)*
+  - **Balance with orders (200 seeds):** holding gives 50/50; charging the
+    samurai at once wins 55% for the samurai and archers.

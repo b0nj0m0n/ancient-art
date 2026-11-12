@@ -14,7 +14,12 @@ extends RefCounted
 ##    attacker takes several thrusts; whoever dies there falls where they stand.
 ##    Whoever survives closes in, where the long spear is clumsy
 ##    (close_range / close_effectiveness).
-## 4. The battle ends when one side has no one left standing.
+## 4. The battle ends when one side has no one left on the field (fallen or fled).
+##
+## Orders: the player's squads hold until ordered. Each order (attack a squad,
+## or retreat) spends the side's command bar, which refills over time. Orders
+## take effect on the next tick and are logged with that tick, so a battle
+## replays exactly from its seed plus its order log.
 
 const LEFT := 0
 const RIGHT := 1
@@ -33,16 +38,26 @@ var squads: Array[Squad] = []
 var soldiers: Array[Soldier] = []
 ## The side holding the field at the end, or NO_WINNER while the fight goes on.
 var winner: int = NO_WINNER
+## Command bar per side, measured in orders (see BattleTuning).
+var command: Array[float] = [0.0, 0.0]
+## Every order applied, as {tick, side, squad, kind, target}. Feed it back to
+## replay a battle exactly.
+var order_log: Array[Dictionary] = []
+var _pending: Array[Dictionary] = []
+var _replay: Array[Dictionary] = []
 
 
 ## seed_override replays the same setup with a different seed (used by tests
-## and balance reports). -1 uses the setup's own seed.
-func _init(skirmish: SkirmishSetup, seed_override: int = -1) -> void:
+## and balance reports); -1 uses the setup's own seed. replay is an order_log
+## from an earlier battle: its orders are applied at the same ticks.
+func _init(skirmish: SkirmishSetup, seed_override: int = -1, replay: Array[Dictionary] = []) -> void:
 	setup = skirmish
 	terrain = skirmish.terrain
 	tuning = skirmish.tuning
 	dt = 1.0 / tuning.tick_rate
 	rng.seed = skirmish.rng_seed if seed_override < 0 else seed_override
+	command = [tuning.command_bar_start, tuning.command_bar_start]
+	_replay = replay.duplicate()
 	_build_side(skirmish.left, LEFT)
 	_build_side(skirmish.right, RIGHT)
 
@@ -53,6 +68,64 @@ func side_setup(side: int) -> SideSetup:
 
 func is_over() -> bool:
 	return winner != NO_WINNER
+
+
+func is_player_side(side: int) -> bool:
+	return side == setup.player_side
+
+
+# --- Orders --------------------------------------------------------------------
+
+## True if the side's command bar holds enough for one order.
+func can_order(side: int) -> bool:
+	return command[side] >= tuning.order_cost
+
+
+## Order a squad to attack an enemy squad. Returns false (and spends nothing)
+## if the order can't be given.
+func order_attack(squad: Squad, target: Squad) -> bool:
+	if target == null or target.side == squad.side or target.standing().is_empty():
+		return false
+	return _queue(squad, Squad.Order.ATTACK, target)
+
+
+## Order a squad to retreat off its home edge.
+func order_retreat(squad: Squad) -> bool:
+	return _queue(squad, Squad.Order.RETREAT, null)
+
+
+func _queue(squad: Squad, kind: Squad.Order, target: Squad) -> bool:
+	if is_over() or not can_order(squad.side) or squad.standing().is_empty():
+		return false
+	if squad.order == Squad.Order.RETREAT:
+		return false  # Once running, they don't come back.
+	command[squad.side] -= tuning.order_cost
+	_pending.append({"side": squad.side, "squad": squads.find(squad), "kind": kind,
+		"target": squads.find(target) if target != null else -1})
+	return true
+
+
+func _apply_orders() -> void:
+	var due: Array[Dictionary] = []
+	for o in _pending:
+		var entry := o.duplicate()
+		entry["tick"] = tick_count
+		due.append(entry)
+	_pending.clear()
+	while not _replay.is_empty() and _replay[0]["tick"] == tick_count:
+		var o: Dictionary = _replay.pop_front()
+		command[o["side"]] -= tuning.order_cost
+		due.append(o)
+	for o in due:
+		order_log.append(o)
+		var squad := squads[o["squad"]]
+		squad.order = o["kind"]
+		squad.target_squad = squads[o["target"]] if o["target"] >= 0 else null
+		if squad.order == Squad.Order.RETREAT:
+			for s in squad.soldiers:
+				if s.is_standing():
+					s.state = Soldier.State.FLEEING
+					s.target = null
 
 
 ## Seconds since the battle began.
@@ -68,6 +141,8 @@ func _build_side(side_def: SideSetup, side: int) -> void:
 		squad.index = i
 		squad.troop = def.troop
 		squad.has_commander = def.has_commander
+		if side != setup.player_side and not def.troop.holds_position:
+			squad.order = Squad.Order.ADVANCE
 		squad.anchor_x = def.start_position * terrain.field_width
 		squad.prev_anchor_x = squad.anchor_x
 		var rows := 2 if def.size > 3 else 1
@@ -105,18 +180,25 @@ func tick() -> void:
 	for squad in squads:
 		squad.prev_anchor_x = squad.anchor_x
 		squad.moving = false
+	_apply_orders()
+	for side in 2:
+		command[side] = minf(command[side] + dt / tuning.command_refill_seconds, tuning.command_bar_max)
 	if elapsed() < tuning.march_delay:
 		return
 	for squad in squads:
+		if squad.order == Squad.Order.RETREAT:
+			continue
 		if not squad.engaged:
 			_check_engage(squad)
 		if not squad.engaged:
 			_march(squad)
 	for s in soldiers:
-		if s.is_standing() and s.squad.engaged:
+		if s.state == Soldier.State.FLEEING:
+			_flee(s)
+		elif s.is_standing() and s.squad.engaged:
 			_fight(s)
 	for squad in squads:
-		if squad.engaged:
+		if squad.engaged or squad.order == Squad.Order.RETREAT:
 			_follow_banner(squad)
 	_check_winner()
 
@@ -135,11 +217,19 @@ func _check_engage(squad: Squad) -> void:
 			s.state = Soldier.State.FIGHTING
 
 
-## March a squad toward the enemy as one block.
+## March a squad as one block: toward its target on ATTACK, toward the enemy
+## side on ADVANCE. Squads on HOLD stay put.
 func _march(squad: Squad) -> void:
-	if squad.troop.holds_position or squad.standing().is_empty():
+	if squad.standing().is_empty():
+		return
+	if squad.order != Squad.Order.ADVANCE and squad.order != Squad.Order.ATTACK:
 		return
 	var dir := facing(squad.side)
+	if squad.order == Squad.Order.ATTACK and squad.target_squad != null \
+			and not squad.target_squad.standing().is_empty():
+		dir = signf(squad.target_squad.anchor_x - squad.anchor_x)
+		if dir == 0.0:
+			dir = facing(squad.side)
 	var front := front_x(squad)
 	var step := squad.troop.march_speed * slope_factor(squad.anchor_x, dir) * dt
 	var enemy := _nearest_enemy_ahead(squad.side, front, dir)
@@ -158,14 +248,17 @@ func _march(squad: Squad) -> void:
 
 func _fight(s: Soldier) -> void:
 	var t := s.squad.troop
-	if s.target == null or not s.target.is_standing():
-		s.target = _nearest_enemy(s)
+	var aim := s.squad.target_squad if s.squad.order == Squad.Order.ATTACK else null
+	if aim != null and aim.standing().is_empty():
+		aim = null
+	if s.target == null or not s.target.is_standing() or (aim != null and s.target.squad != aim):
+		s.target = _nearest_enemy(s, aim)
 	if s.target == null:
 		return
 	var dir := signf(s.target.x - s.x)
 	var dist := absf(s.target.x - s.x)
 	# Close to the preferred range, never nearer than body_gap to the nearest enemy ahead.
-	if dist > t.preferred_range and not t.holds_position:
+	if dist > t.preferred_range:
 		var step := t.march_speed * s.pace * slope_factor(s.x, dir) * dt
 		step = minf(step, dist - t.preferred_range)
 		if _in_spear_zone(s, dir):
@@ -227,6 +320,15 @@ func _in_spear_zone(s: Soldier, dir: float) -> bool:
 func _descending(s: Soldier) -> bool:
 	var moved := s.x - s.prev_x
 	return moved != 0.0 and terrain.slope_at(s.x) * signf(moved) < 0.0
+
+
+## Run for the home edge; once off the field, gone for this skirmish.
+func _flee(s: Soldier) -> void:
+	var home := -facing(s.side)
+	var t := s.squad.troop
+	s.x += home * t.march_speed * s.pace * tuning.retreat_speed_factor * slope_factor(s.x, home) * dt
+	if s.x < -tuning.leave_margin or s.x > terrain.field_width + tuning.leave_margin:
+		s.state = Soldier.State.GONE
 
 
 ## Once fighting breaks the block apart, the banner stays with the survivors.
@@ -302,11 +404,14 @@ func _nearest_comrade_ahead(me: Soldier, dir: float) -> float:
 	return best
 
 
-func _nearest_enemy(me: Soldier) -> Soldier:
+## The nearest standing enemy, from within one squad if only_squad is given.
+func _nearest_enemy(me: Soldier, only_squad: Squad = null) -> Soldier:
 	var best: Soldier = null
 	var best_d := INF
 	for s in soldiers:
 		if s.side == me.side or not s.is_standing():
+			continue
+		if only_squad != null and s.squad != only_squad:
 			continue
 		var d := absf(s.x - me.x)
 		if d < best_d:

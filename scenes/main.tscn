@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3]
+[gd_scene load_steps=19 format=3]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
 [ext_resource type="Resource" path="res://data/skirmish_setup.tres" id="2_setup"]
@@ -14,6 +14,8 @@
 [ext_resource type="Script" path="res://scripts/view/watercolour_pass.gd" id="12_wc_script"]
 [ext_resource type="Script" path="res://scripts/view/pose_sheet.gd" id="13_poses"]
 [ext_resource type="Script" path="res://scripts/view/poses_button.gd" id="14_posebtn"]
+[ext_resource type="Script" path="res://scripts/view/order_input.gd" id="15_orders"]
+[ext_resource type="Script" path="res://scripts/view/command_bar_view.gd" id="16_bar"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wc"]
 shader = ExtResource("9_wc_shader")
@@ -51,6 +53,9 @@ script = ExtResource("6_army")
 
 [node name="Foreground" type="Node2D" parent="Field"]
 script = ExtResource("8_front")
+
+[node name="Orders" type="Node" parent="."]
+script = ExtResource("15_orders")
 
 [node name="Watercolour" type="CanvasLayer" parent="."]
 
@@ -131,3 +136,33 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_result")
 text = "The field belongs to"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="CommandBar" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -62.0
+offset_right = 324.0
+offset_bottom = -26.0
+grow_vertical = 0
+mouse_filter = 2
+script = ExtResource("16_bar")
+
+[node name="Retreat" type="Button" parent="HUD"]
+visible = false
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -214.0
+offset_top = -86.0
+offset_right = -24.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+theme_override_font_sizes/font_size = 28
+text = "Retreat"

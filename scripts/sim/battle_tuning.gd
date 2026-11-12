@@ -36,3 +36,18 @@ extends Resource
 ## the spear's close_range and its reach). Low means the spearmen get more
 ## thrusts in before the attacker reaches them.
 @export_range(0.05, 1.0) var spear_zone_slowdown: float = 0.3
+
+@export_group("Command bar")
+## Orders the bar holds when full.
+@export var command_bar_max: float = 3.0
+## Seconds for the bar to refill by one order. Later this comes from the
+## commander's communication skill.
+@export var command_refill_seconds: float = 6.0
+## What one order (attack or retreat) costs.
+@export var order_cost: float = 1.0
+## The bar starts this full.
+@export var command_bar_start: float = 3.0
+## Retreating soldiers run this much faster than they march.
+@export var retreat_speed_factor: float = 1.4
+## How far past the field's edge a retreating soldier runs before they're gone.
+@export var leave_margin: float = 30.0

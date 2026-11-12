@@ -3,7 +3,7 @@ extends RefCounted
 ## One person on the field. Their stats are hidden: rolled from their troop
 ## type's ranges with the battle's seed, and never shown to the player as numbers.
 
-enum State { FORMED, FIGHTING, DOWN }
+enum State { FORMED, FIGHTING, FLEEING, DOWN, GONE }
 
 var id: int
 var side: int  # 0 = left, 1 = right
@@ -46,5 +46,11 @@ var kills: int = 0
 var fell_at_distance: float = -1.0
 
 
+## Still on the field and on their feet (fighting, waiting or running away).
 func is_standing() -> bool:
-	return state != State.DOWN
+	return state == State.FORMED or state == State.FIGHTING or state == State.FLEEING
+
+
+## Left the field by running off their home edge.
+func is_gone() -> bool:
+	return state == State.GONE
