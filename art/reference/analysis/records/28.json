@@ -1,0 +1,177 @@
+{
+ "index": 28,
+ "master": "figures-core/28_rp-7653666.jpg",
+ "master_px": [
+  9891,
+  4975
+ ],
+ "style_cluster": "late-edo-utagawa",
+ "subject": "sea battle between boats; pale drowned warriors under the wave",
+ "themes": [
+  "sea battle",
+  "boats",
+  "spirits"
+ ],
+ "style_notes": "turquoise wave mass, small armoured crews, pale outline-only underwater figures",
+ "palette": [
+  {
+   "hex": "#648578",
+   "share": 0.211
+  },
+  {
+   "hex": "#809180",
+   "share": 0.182
+  },
+  {
+   "hex": "#5e685a",
+   "share": 0.126
+  },
+  {
+   "hex": "#cec0a7",
+   "share": 0.105
+  },
+  {
+   "hex": "#9b896f",
+   "share": 0.099
+  },
+  {
+   "hex": "#aba38c",
+   "share": 0.098
+  },
+  {
+   "hex": "#8e6d53",
+   "share": 0.092
+  },
+  {
+   "hex": "#394a54",
+   "share": 0.087
+  }
+ ],
+ "figures": [
+  {
+   "id": "28a",
+   "description": "commander on ship in full armour",
+   "view": "three-quarter",
+   "facing": "R",
+   "kit": "armoured",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.09,
+    0.21,
+    0.23,
+    0.43
+   ],
+   "bbox_px": [
+    771,
+    985,
+    2393,
+    2198
+   ],
+   "source_px": [
+    1622,
+    1213
+   ],
+   "crop": "crops/28a.jpg"
+  },
+  {
+   "id": "28b",
+   "description": "boat crew fighting (group)",
+   "view": "small-scale",
+   "facing": "mixed",
+   "kit": "armoured",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.49,
+    0.24,
+    0.67,
+    0.46
+   ],
+   "bbox_px": [
+    4727,
+    1134,
+    6745,
+    2348
+   ],
+   "source_px": [
+    2018,
+    1214
+   ],
+   "crop": "crops/28b.jpg"
+  },
+  {
+   "id": "28c",
+   "description": "boat crew with bows (group)",
+   "view": "small-scale",
+   "facing": "L",
+   "kit": "armoured",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.66,
+    0.25,
+    0.99,
+    0.51
+   ],
+   "bbox_px": [
+    6409,
+    1184,
+    9891,
+    2596
+   ],
+   "source_px": [
+    3482,
+    1412
+   ],
+   "crop": "crops/28c.jpg"
+  },
+  {
+   "id": "28d",
+   "description": "pale underwater warrior",
+   "view": "spirit",
+   "facing": "L",
+   "kit": "-",
+   "training_use": "maybe",
+   "bbox_frac": [
+    0.37,
+    0.57,
+    0.64,
+    0.88
+   ],
+   "bbox_px": [
+    3540,
+    2776,
+    6448,
+    4437
+   ],
+   "source_px": [
+    2908,
+    1661
+   ],
+   "crop": "crops/28d.jpg"
+  },
+  {
+   "id": "28e",
+   "description": "pale underwater warrior with sword",
+   "view": "spirit",
+   "facing": "L",
+   "kit": "-",
+   "training_use": "maybe",
+   "bbox_frac": [
+    0.65,
+    0.56,
+    0.91,
+    0.91
+   ],
+   "bbox_px": [
+    6310,
+    2726,
+    9119,
+    4586
+   ],
+   "source_px": [
+    2809,
+    1860
+   ],
+   "crop": "crops/28e.jpg"
+  }
+ ]
+}

@@ -219,3 +219,28 @@ Decisions made by Ben for the first prototype.
 - **The battle never pauses** once the fighting starts.
 - **Command bar:** holds 3 orders. An attack or a retreat costs 1. One order's worth refills about every 6 seconds. All of these values can be tuned.
 - **Prototype defaults, to be confirmed by Ben:** the player picks a side on the start screen and the AI plays the other. On the samurai/archer side the commander is with the samurai. The town blocks arrows and gives cover, like the trees.
+- **Advance (built):** after a short pause, squads march toward the enemy and
+  halt when the front ranks meet. Climbing slows a squad and going downhill
+  speeds it up. Speeds and slope effects live in `data/battle_tuning.tres` and
+  `data/troops/`. *(Prototype default, to be confirmed: archers hold their
+  position instead of marching, until ranged combat exists.)*
+- **Fighting (built).** Decided by Ben: each troop type engages in its own way,
+  and matchups come from reach, armour, skill and position.
+  - **The spear rule (Ben):** spearmen brace at spear's length. Pushing through
+    the spear points is slow, so an attacker takes several thrusts. If they die
+    at spearpoint they fall where they are. If they survive they close to
+    hand-to-hand, where the long spear is clumsy.
+  - **Ranks:** soldiers keep a rank's distance behind comrades in their row, so
+    long spears strike past the front rank while swordsmen fight one-to-one.
+  - **Each blow:** skill gap, higher ground and a downhill charge on the first
+    blow change the hit chance; armour reduces the damage.
+  - **Hidden stats:** each soldier's skill, toughness and pace are rolled from
+    their troop type's ranges with the battle seed. Never shown as numbers.
+  - **The end:** until morale and routs exist, the battle ends when one side has
+    no one standing. The result is shown in words, never numbers.
+  - **Tuning:** all numbers are in `data/troops/*.tres` and
+    `data/battle_tuning.tres`. `tests/test_battle.gd` prints a balance report
+    over 200 seeds, and `tools/sweep.gd` compares settings.
+  - *(Prototype defaults, to be confirmed: archers wait by the village and fight
+    weakly with a knife if reached; the matchup is tuned to roughly even,
+    ashigaru 55% and samurai with archers 45%.)*

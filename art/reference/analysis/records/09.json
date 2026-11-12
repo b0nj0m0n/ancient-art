@@ -1,0 +1,303 @@
+{
+ "index": 9,
+ "master": "figures-core/09_rp-11932149.jpg",
+ "master_px": [
+  4044,
+  2029
+ ],
+ "style_cluster": "late-edo-utagawa",
+ "subject": "melee across a tiled castle roof; fighters with poles and catch-forks",
+ "themes": [
+  "rooftop",
+  "melee",
+  "climbing",
+  "polearms"
+ ],
+ "style_notes": "blue-green patterned clothing against black tiles; bold keyline; acrobatic poses",
+ "palette": [
+  {
+   "hex": "#b3bbad",
+   "share": 0.21
+  },
+  {
+   "hex": "#6b675a",
+   "share": 0.177
+  },
+  {
+   "hex": "#54524b",
+   "share": 0.144
+  },
+  {
+   "hex": "#897d65",
+   "share": 0.109
+  },
+  {
+   "hex": "#a19e88",
+   "share": 0.103
+  },
+  {
+   "hex": "#bb8461",
+   "share": 0.097
+  },
+  {
+   "hex": "#3e3d38",
+   "share": 0.091
+  },
+  {
+   "hex": "#71837d",
+   "share": 0.07
+  }
+ ],
+ "figures": [
+  {
+   "id": "09a",
+   "description": "swordsman standing",
+   "view": "three-quarter",
+   "facing": "R",
+   "kit": "unarmoured",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.05,
+    0.57,
+    0.17,
+    0.91
+   ],
+   "bbox_px": [
+    153,
+    1132,
+    736,
+    1870
+   ],
+   "source_px": [
+    583,
+    738
+   ],
+   "crop": "crops/09a.jpg"
+  },
+  {
+   "id": "09b",
+   "description": "group of fighters",
+   "view": "mixed",
+   "facing": "R",
+   "kit": "unarmoured",
+   "training_use": "maybe",
+   "bbox_frac": [
+    0.15,
+    0.63,
+    0.34,
+    0.99
+   ],
+   "bbox_px": [
+    558,
+    1253,
+    1423,
+    2029
+   ],
+   "source_px": [
+    865,
+    776
+   ],
+   "crop": "crops/09b.jpg"
+  },
+  {
+   "id": "09c",
+   "description": "figure on roof ridge",
+   "view": "three-quarter",
+   "facing": "R",
+   "kit": "unarmoured",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.22,
+    0.07,
+    0.35,
+    0.39
+   ],
+   "bbox_px": [
+    841,
+    117,
+    1463,
+    815
+   ],
+   "source_px": [
+    622,
+    698
+   ],
+   "crop": "crops/09c.jpg"
+  },
+  {
+   "id": "09d",
+   "description": "climbing fighter",
+   "view": "three-quarter",
+   "facing": "R",
+   "kit": "unarmoured",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.32,
+    0.27,
+    0.45,
+    0.53
+   ],
+   "bbox_px": [
+    1245,
+    523,
+    1868,
+    1099
+   ],
+   "source_px": [
+    623,
+    576
+   ],
+   "crop": "crops/09d.jpg"
+  },
+  {
+   "id": "09e",
+   "description": "fighter thrusting pole",
+   "view": "three-quarter",
+   "facing": "R",
+   "kit": "unarmoured",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.39,
+    0.26,
+    0.57,
+    0.57
+   ],
+   "bbox_px": [
+    1528,
+    503,
+    2353,
+    1180
+   ],
+   "source_px": [
+    825,
+    677
+   ],
+   "crop": "crops/09e.jpg"
+  },
+  {
+   "id": "09f",
+   "description": "large fighter seen from behind",
+   "view": "back",
+   "facing": "-",
+   "kit": "unarmoured",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.34,
+    0.52,
+    0.51,
+    0.89
+   ],
+   "bbox_px": [
+    1326,
+    1030,
+    2110,
+    1830
+   ],
+   "source_px": [
+    784,
+    800
+   ],
+   "crop": "crops/09f.jpg"
+  },
+  {
+   "id": "09g",
+   "description": "leaping figure",
+   "view": "three-quarter",
+   "facing": "R",
+   "kit": "unarmoured",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.52,
+    0.02,
+    0.68,
+    0.29
+   ],
+   "bbox_px": [
+    2054,
+    16,
+    2798,
+    612
+   ],
+   "source_px": [
+    744,
+    596
+   ],
+   "crop": "crops/09g.jpg"
+  },
+  {
+   "id": "09h",
+   "description": "hero astride roof ornament",
+   "view": "three-quarter",
+   "facing": "L",
+   "kit": "unarmoured",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.68,
+    0.12,
+    0.89,
+    0.5
+   ],
+   "bbox_px": [
+    2701,
+    219,
+    3647,
+    1038
+   ],
+   "source_px": [
+    946,
+    819
+   ],
+   "crop": "crops/09h.jpg"
+  },
+  {
+   "id": "09i",
+   "description": "falling man",
+   "view": "falling",
+   "facing": "-",
+   "kit": "unarmoured",
+   "training_use": "maybe",
+   "bbox_frac": [
+    0.87,
+    0.29,
+    1.0,
+    0.53
+   ],
+   "bbox_px": [
+    3469,
+    564,
+    4044,
+    1099
+   ],
+   "source_px": [
+    575,
+    535
+   ],
+   "crop": "crops/09i.jpg"
+  },
+  {
+   "id": "09j",
+   "description": "pair with pole",
+   "view": "mixed",
+   "facing": "-",
+   "kit": "unarmoured",
+   "training_use": "maybe",
+   "bbox_frac": [
+    0.68,
+    0.69,
+    0.87,
+    0.96
+   ],
+   "bbox_px": [
+    2701,
+    1375,
+    3566,
+    1972
+   ],
+   "source_px": [
+    865,
+    597
+   ],
+   "crop": "crops/09j.jpg"
+  }
+ ]
+}

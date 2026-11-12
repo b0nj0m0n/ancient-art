@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3]
+[gd_scene load_steps=17 format=3]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
 [ext_resource type="Resource" path="res://data/skirmish_setup.tres" id="2_setup"]
@@ -12,11 +12,26 @@
 [ext_resource type="Texture2D" path="res://art/generated/paper.png" id="10_paper"]
 [ext_resource type="Texture2D" path="res://art/generated/wash_noise.png" id="11_noise"]
 [ext_resource type="Script" path="res://scripts/view/watercolour_pass.gd" id="12_wc_script"]
+[ext_resource type="Script" path="res://scripts/view/pose_sheet.gd" id="13_poses"]
+[ext_resource type="Script" path="res://scripts/view/poses_button.gd" id="14_posebtn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wc"]
 shader = ExtResource("9_wc_shader")
 shader_parameter/paper_tex = ExtResource("10_paper")
 shader_parameter/noise_tex = ExtResource("11_noise")
+
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_result"]
+content_margin_left = 28.0
+content_margin_top = 12.0
+content_margin_right = 28.0
+content_margin_bottom = 14.0
+bg_color = Color(0.914, 0.863, 0.753, 0.94)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.753, 0.271, 0.227, 1)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_main")
@@ -61,3 +76,58 @@ theme_override_colors/font_color = Color(0.17, 0.15, 0.13, 0.6)
 theme_override_font_sizes/font_size = 16
 text = "build"
 script = ExtResource("7_build")
+
+[node name="PoseSheet" type="Control" parent="HUD"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("13_poses")
+
+[node name="Restart" type="Button" parent="HUD"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -150.0
+offset_top = 12.0
+offset_right = -14.0
+offset_bottom = 66.0
+grow_horizontal = 0
+focus_mode = 0
+theme_override_font_sizes/font_size = 24
+text = "Restart"
+
+[node name="PosesButton" type="Button" parent="HUD"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -286.0
+offset_top = 12.0
+offset_right = -162.0
+offset_bottom = 66.0
+grow_horizontal = 0
+focus_mode = 0
+theme_override_font_sizes/font_size = 24
+text = "Poses"
+script = ExtResource("14_posebtn")
+
+[node name="Result" type="Label" parent="HUD"]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -320.0
+offset_top = 96.0
+offset_right = 320.0
+offset_bottom = 160.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.216, 0.212, 0.216, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_result")
+text = "The field belongs to"
+horizontal_alignment = 1
+vertical_alignment = 1

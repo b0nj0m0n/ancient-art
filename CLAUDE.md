@@ -71,5 +71,10 @@ says the prototype is fun.
 - `docs/`: design documents
 - `art/reference/`: Japanese battle and landscape prints. Use them as style
   reference only, never as game assets (see its README)
+- `art/units/<unit>/`: rigged cut-paper art for one troop type: part textures and
+  `rig.json` (parts, pivots, poses, animations). Made by `tools/artgen`; drawn by
+  `scripts/view/rigged_figure.gd`
+- `tools/artgen/`: Python generator that turns a written spec into a unit folder
+  (see its README)
 - `project.godot`: the Godot project root
 - `scenes/`, `scripts/`, `data/`, `art/`: game content (create these as needed)

@@ -7,6 +7,7 @@
 [ext_resource type="Resource" path="res://data/troops/archer.tres" id="5_ocxa8"]
 [ext_resource type="Script" path="res://scripts/sim/skirmish_setup.gd" id="6_tjd3t"]
 [ext_resource type="Resource" path="res://data/hillside.tres" id="7_op0fj"]
+[ext_resource type="Resource" path="res://data/battle_tuning.tres" id="8_tuning"]
 
 [sub_resource type="Resource" id="Resource_cgcqe"]
 script = ExtResource("2_p724h")
@@ -40,5 +41,6 @@ squads = Array[ExtResource("2_p724h")]([SubResource("Resource_1diy5"), SubResour
 [resource]
 script = ExtResource("6_tjd3t")
 terrain = ExtResource("7_op0fj")
+tuning = ExtResource("8_tuning")
 left = SubResource("Resource_d6rje")
 right = SubResource("Resource_tw4p2")

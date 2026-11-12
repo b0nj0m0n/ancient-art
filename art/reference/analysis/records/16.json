@@ -1,0 +1,102 @@
+{
+ "index": 16,
+ "master": "figures-core/16_rp-3239259.jpg",
+ "master_px": [
+  5008,
+  6988
+ ],
+ "style_cluster": "late-edo-utagawa",
+ "subject": "giant warrior bracing an enormous bow, two commoners cowering",
+ "themes": [
+  "archery",
+  "hero",
+  "strength"
+ ],
+ "style_notes": "dense teal pattern, black keyline, muscular limbs with white highlights, crest-patterned leggings",
+ "palette": [
+  {
+   "hex": "#352e27",
+   "share": 0.208
+  },
+  {
+   "hex": "#493e32",
+   "share": 0.176
+  },
+  {
+   "hex": "#5e5443",
+   "share": 0.175
+  },
+  {
+   "hex": "#736d5b",
+   "share": 0.134
+  },
+  {
+   "hex": "#a58968",
+   "share": 0.1
+  },
+  {
+   "hex": "#333e37",
+   "share": 0.075
+  },
+  {
+   "hex": "#231e1b",
+   "share": 0.075
+  },
+  {
+   "hex": "#612d1d",
+   "share": 0.058
+  }
+ ],
+ "figures": [
+  {
+   "id": "16a",
+   "description": "warrior bracing giant bow",
+   "view": "three-quarter",
+   "facing": "R",
+   "kit": "light",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.07,
+    0.0,
+    0.91,
+    0.94
+   ],
+   "bbox_px": [
+    290,
+    0,
+    4617,
+    6652
+   ],
+   "source_px": [
+    4327,
+    6652
+   ],
+   "crop": "crops/16a.jpg"
+  },
+  {
+   "id": "16b",
+   "description": "cowering commoners",
+   "view": "mixed",
+   "facing": "-",
+   "kit": "commoner",
+   "training_use": "maybe",
+   "bbox_frac": [
+    0.69,
+    0.51,
+    0.98,
+    0.83
+   ],
+   "bbox_px": [
+    3395,
+    3480,
+    4967,
+    5883
+   ],
+   "source_px": [
+    1572,
+    2403
+   ],
+   "crop": "crops/16b.jpg"
+  }
+ ]
+}

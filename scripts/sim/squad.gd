@@ -9,3 +9,16 @@ var soldiers: Array[Soldier] = []
 var has_commander: bool = false
 ## Where the squad's banner stands, in field units.
 var anchor_x: float = 0.0
+var prev_anchor_x: float = 0.0
+## True while the squad is marching as a block this tick.
+var moving: bool = false
+## Once an enemy comes close, the squad breaks into individual fights.
+var engaged: bool = false
+
+
+func standing() -> Array[Soldier]:
+	var out: Array[Soldier] = []
+	for s in soldiers:
+		if s.is_standing():
+			out.append(s)
+	return out

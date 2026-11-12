@@ -1,0 +1,178 @@
+{
+ "index": 10,
+ "master": "figures-core/10_rp-13965122.jpg",
+ "master_px": [
+  2185,
+  3215
+ ],
+ "style_cluster": "late-edo-utagawa",
+ "subject": "cavalry clash on a riverbank, arrows on the ground",
+ "themes": [
+  "cavalry",
+  "battle",
+  "arrows",
+  "river"
+ ],
+ "style_notes": "dark and ornate; teal, vermilion, ochre on grey; heavy pattern on armour and horse trappings",
+ "palette": [
+  {
+   "hex": "#6f685b",
+   "share": 0.154
+  },
+  {
+   "hex": "#63868d",
+   "share": 0.147
+  },
+  {
+   "hex": "#4e3224",
+   "share": 0.137
+  },
+  {
+   "hex": "#242f2d",
+   "share": 0.137
+  },
+  {
+   "hex": "#131615",
+   "share": 0.12
+  },
+  {
+   "hex": "#4f4e44",
+   "share": 0.119
+  },
+  {
+   "hex": "#7b4a30",
+   "share": 0.115
+  },
+  {
+   "hex": "#a7835f",
+   "share": 0.072
+  }
+ ],
+ "figures": [
+  {
+   "id": "10a",
+   "description": "three foot warriors on a rise",
+   "view": "small-scale",
+   "facing": "R",
+   "kit": "armoured",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.0,
+    0.07,
+    0.31,
+    0.27
+   ],
+   "bbox_px": [
+    0,
+    186,
+    703,
+    906
+   ],
+   "source_px": [
+    703,
+    720
+   ],
+   "crop": "crops/10a.jpg"
+  },
+  {
+   "id": "10b",
+   "description": "mounted warrior swinging club",
+   "view": "mounted",
+   "facing": "R",
+   "kit": "armoured",
+   "training_use": "reference-only",
+   "bbox_frac": [
+    0.41,
+    0.06,
+    0.85,
+    0.39
+   ],
+   "bbox_px": [
+    869,
+    154,
+    1883,
+    1292
+   ],
+   "source_px": [
+    1014,
+    1138
+   ],
+   "crop": "crops/10b.jpg"
+  },
+  {
+   "id": "10c",
+   "description": "mounted samurai seen from behind with spear",
+   "view": "mounted",
+   "facing": "R",
+   "kit": "armoured",
+   "training_use": "reference-only",
+   "bbox_frac": [
+    0.24,
+    0.37,
+    0.76,
+    0.86
+   ],
+   "bbox_px": [
+    498,
+    1150,
+    1686,
+    2803
+   ],
+   "source_px": [
+    1188,
+    1653
+   ],
+   "crop": "crops/10c.jpg"
+  },
+  {
+   "id": "10d",
+   "description": "bearded foot warrior",
+   "view": "profile",
+   "facing": "R",
+   "kit": "armoured",
+   "training_use": "yes",
+   "bbox_frac": [
+    0.05,
+    0.75,
+    0.37,
+    1.0
+   ],
+   "bbox_px": [
+    83,
+    2372,
+    834,
+    3215
+   ],
+   "source_px": [
+    751,
+    843
+   ],
+   "crop": "crops/10d.jpg"
+  },
+  {
+   "id": "10e",
+   "description": "warrior seen from behind (cut off)",
+   "view": "partial",
+   "facing": "-",
+   "kit": "armoured",
+   "training_use": "maybe",
+   "bbox_frac": [
+    0.55,
+    0.81,
+    0.87,
+    1.0
+   ],
+   "bbox_px": [
+    1175,
+    2565,
+    1927,
+    3215
+   ],
+   "source_px": [
+    752,
+    650
+   ],
+   "crop": "crops/10e.jpg"
+  }
+ ]
+}

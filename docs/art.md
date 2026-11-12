@@ -116,6 +116,13 @@ Painted pieces, animated like paper cut-outs, under one watercolour shader.
 Soldier and tree art waits until the battle prototype is fun (CLAUDE.md
 milestone). The style frame goes ahead now.
 
+**Upgrade path (keep it this way):** the simulation (`scripts/sim/`) never
+draws and never references art. Only `scripts/view/` does. Painted soldiers
+replace `soldier_figure.gd` and the soldier drawing in `army_view.gd`. The view
+already gets everything it needs from the simulation: each soldier's position,
+side, troop type, look seed, and whether their squad is marching. Better
+landscape art replaces the shaders and textures used by `hillside_view.gd`.
+
 *(decide after seeing the style frame: ink outlines with a faint paper shadow
 (used in the style frame), or the pale paper-cut edge)*
 
