@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3]
+[gd_scene load_steps=20 format=3]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
 [ext_resource type="Resource" path="res://data/skirmish_setup.tres" id="2_setup"]
@@ -34,6 +34,17 @@ border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
 border_color = Color(0.753, 0.271, 0.227, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hint"]
+content_margin_left = 18.0
+content_margin_top = 8.0
+content_margin_right = 18.0
+content_margin_bottom = 9.0
+bg_color = Color(0.914, 0.863, 0.753, 0.88)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_main")
@@ -166,3 +177,21 @@ grow_vertical = 0
 focus_mode = 0
 theme_override_font_sizes/font_size = 28
 text = "Retreat"
+
+[node name="Hint" type="Label" parent="HUD"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -300.0
+offset_top = 72.0
+offset_right = 300.0
+offset_bottom = 116.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.216, 0.212, 0.216, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_hint")
+text = "Tap one of your squads."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

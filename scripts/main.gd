@@ -26,6 +26,7 @@ func _ready() -> void:
 	_orders.army = _army
 	_orders.bar = _bar
 	_orders.retreat_button = $HUD/Retreat
+	_orders.hint = $HUD/Hint
 	_restart.pressed.connect(_start_battle)
 	_start_battle()
 

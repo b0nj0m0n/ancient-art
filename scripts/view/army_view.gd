@@ -37,6 +37,9 @@ const FLASH_SECONDS := 0.9
 
 ## The player's selected squad (drawn with a vermilion ring), or null.
 var selected: Squad = null
+## Pulse a faint ring under the player's squads, so a new player sees which
+## are theirs. OrderInput turns this off after the first order.
+var show_player_squads: bool = false
 var _flash_squad: Squad = null
 var _flash_at: float = -10.0
 
@@ -93,6 +96,11 @@ func _draw() -> void:
 		return
 	if selected != null:
 		_draw_ring(selected, Palette.VERMILION, 1.0)
+	elif show_player_squads:
+		var pulse := 0.25 + 0.35 * (0.5 + 0.5 * sin(_time * 3.0))
+		for q in battle.squads:
+			if battle.is_player_side(q.side):
+				_draw_ring(q, Palette.VERMILION, pulse)
 	if _flash_squad != null and _time - _flash_at < FLASH_SECONDS:
 		_draw_ring(_flash_squad, Palette.INK, 1.0 - (_time - _flash_at) / FLASH_SECONDS)
 	for squad in battle.squads:
