@@ -11,6 +11,9 @@ building.
 For anything visual, also read `docs/art.md` (art direction) and check changes
 against the reference images in `art/reference/`.
 
+For where the work stands and what's next, read `docs/progress.md`, and update
+it at the end of each step.
+
 ## What kind of game this is
 
 - A management game, not an RTS and not a reflex game. The player makes a few
